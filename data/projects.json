@@ -1,0 +1,98 @@
+{
+  "projects": [
+    {
+      "id": "hyper-casual-games",
+      "title": "Hyper-Casual Game Collection",
+      "shortDescription": "Collection of hyper-casual mobile games with polished mechanics and ad integration",
+      "description": "A comprehensive collection of hyper-casual mobile games developed during my tenure at OZI Technology. These games feature intuitive one-tap mechanics, colorful visuals, and optimized performance for a wide range of Android devices.\n\nEach game in this collection underwent multiple iterations based on player feedback and retention metrics. The games were optimized for 60fps performance even on low-end devices.",
+      "category": "mobile",
+      "status": "shipped",
+      "featured": true,
+      "images": [
+        "https://via.placeholder.com/800x450/12121a/00ff88?text=Hyper+Casual+Game+1",
+        "https://via.placeholder.com/800x450/12121a/7b2fff?text=Hyper+Casual+Game+2",
+        "https://via.placeholder.com/800x450/12121a/ff2d6a?text=Hyper+Casual+Game+3"
+      ],
+      "thumbnail": "https://via.placeholder.com/400x300/12121a/00ff88?text=Hyper+Casual",
+      "videoUrl": "",
+      "apkUrl": "",
+      "playStoreUrl": "",
+      "technologies": ["Unity 3D", "C#", "AdMob", "Max Mediation", "Firebase Analytics", "Game Physics"],
+      "features": [
+        "One-tap intuitive controls",
+        "50+ unique levels per game",
+        "Smooth 60fps performance",
+        "Integrated rewarded & interstitial ads",
+        "Analytics tracking with ByteBrew"
+      ],
+      "role": "Lead Developer",
+      "duration": "6 months",
+      "teamSize": 3,
+      "platform": "Android",
+      "downloads": "100K+",
+      "year": "2024"
+    },
+    {
+      "id": "android-game-portfolio",
+      "title": "Android Game Portfolio",
+      "shortDescription": "Multiple Android mobile games with unique mechanics and engaging gameplay",
+      "description": "A diverse portfolio of Android games developed for various clients and internal projects. Each game showcases different gameplay mechanics, from puzzle games to action shooters.\n\nThese projects demonstrate my ability to adapt to different game genres and deliver polished experiences within tight deadlines.",
+      "category": "mobile",
+      "status": "released",
+      "featured": true,
+      "images": [
+        "https://via.placeholder.com/800x450/12121a/00ff88?text=Android+Game+1",
+        "https://via.placeholder.com/800x450/12121a/7b2fff?text=Android+Game+2"
+      ],
+      "thumbnail": "https://via.placeholder.com/400x300/12121a/7b2fff?text=Android+Games",
+      "videoUrl": "",
+      "apkUrl": "",
+      "playStoreUrl": "",
+      "technologies": ["Unity 3D", "Unity 2D", "C#", "Android SDK"],
+      "features": [
+        "Multiple game genres",
+        "Custom UI systems",
+        "Save/Load functionality",
+        "Leaderboard integration",
+        "Social sharing features"
+      ],
+      "role": "Game Developer",
+      "duration": "Various",
+      "teamSize": 1,
+      "platform": "Android",
+      "downloads": "50K+",
+      "year": "2023"
+    },
+    {
+      "id": "ad-integration-framework",
+      "title": "Ad Integration Framework",
+      "shortDescription": "Custom ad mediation framework with analytics integration",
+      "description": "A robust ad integration framework built for Unity that simplifies the process of adding advertisements to mobile games. This framework provides a unified interface for multiple ad networks and includes built-in analytics.\n\nThe framework supports automatic eCPM optimization and A/B testing for ad placements to maximize revenue.",
+      "category": "tools",
+      "status": "production",
+      "featured": true,
+      "images": [
+        "https://via.placeholder.com/800x450/12121a/00ff88?text=Ad+Framework+1",
+        "https://via.placeholder.com/800x450/12121a/7b2fff?text=Ad+Framework+2"
+      ],
+      "thumbnail": "https://via.placeholder.com/400x300/12121a/ff2d6a?text=Ad+Framework",
+      "videoUrl": "",
+      "apkUrl": "",
+      "playStoreUrl": "",
+      "technologies": ["Unity", "C#", "AdMob", "AppLovin", "Max Mediation", "Firebase", "ByteBrew", "AppsFlyer"],
+      "features": [
+        "Unified ad API for all networks",
+        "Automatic mediation optimization",
+        "Real-time analytics dashboard",
+        "A/B testing for ad placements",
+        "Revenue tracking per ad unit"
+      ],
+      "role": "Lead Developer",
+      "duration": "3 months",
+      "teamSize": 2,
+      "platform": "Android/iOS",
+      "downloads": "Internal Use",
+      "year": "2024"
+    }
+  ]
+}
