@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shehraz Khalid | Unity Game Developer</title>
+    <title>Shehraz Khalid | Senior Unity Game Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -41,7 +41,6 @@
             overflow-x: hidden;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -53,13 +52,10 @@
             border-radius: 4px;
         }
 
-        /* Animated Grid Background */
         .grid-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -2;
             background-image: 
                 linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
@@ -73,13 +69,10 @@
             50% { opacity: 1; }
         }
 
-        /* Floating Particles */
         .particles {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -1;
             overflow: hidden;
             pointer-events: none;
@@ -87,8 +80,7 @@
 
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 4px; height: 4px;
             background: var(--accent-primary);
             border-radius: 50%;
             box-shadow: 0 0 10px var(--accent-primary);
@@ -113,11 +105,9 @@
             100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             padding: 20px 60px;
             display: flex;
@@ -135,19 +125,10 @@
             color: var(--text-bright);
             text-decoration: none;
             letter-spacing: 2px;
-            position: relative;
         }
 
-        .logo::before {
-            content: '<';
-            color: var(--accent-primary);
-            margin-right: 2px;
-        }
-        .logo::after {
-            content: '/>';
-            color: var(--accent-primary);
-            margin-left: 2px;
-        }
+        .logo::before { content: '<'; color: var(--accent-primary); margin-right: 2px; }
+        .logo::after { content: '/>'; color: var(--accent-primary); margin-left: 2px; }
 
         .nav-links {
             display: flex;
@@ -170,21 +151,14 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
             background: var(--accent-primary);
             transition: width 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--text-bright);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--text-bright); }
+        .nav-links a:hover::after { width: 100%; }
 
         .nav-toggle {
             display: none;
@@ -195,13 +169,11 @@
         }
 
         .nav-toggle span {
-            width: 25px;
-            height: 2px;
+            width: 25px; height: 2px;
             background: var(--accent-primary);
             transition: 0.3s;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -234,10 +206,8 @@
         .hero-badge::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
             animation: shine 3s infinite;
         }
@@ -280,11 +250,30 @@
             margin-right: auto;
         }
 
+        .hero-contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-item span { color: var(--accent-primary); }
+
         .hero-cta {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 60px;
         }
 
         .btn {
@@ -298,7 +287,6 @@
             text-decoration: none;
             transition: all 0.3s;
             position: relative;
-            overflow: hidden;
         }
 
         .btn-primary {
@@ -323,11 +311,21 @@
             color: var(--accent-primary);
         }
 
+        .btn-outline {
+            background: transparent;
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-primary);
+            color: var(--bg-deep);
+        }
+
         .hero-stats {
             display: flex;
             justify-content: center;
             gap: 60px;
-            margin-top: 80px;
             padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -351,7 +349,6 @@
             letter-spacing: 2px;
         }
 
-        /* Section Styling */
         section {
             padding: 120px 60px;
             position: relative;
@@ -381,7 +378,6 @@
             letter-spacing: -1px;
         }
 
-        /* About Section */
         #about {
             background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%);
         }
@@ -406,40 +402,24 @@
             border: 1px solid rgba(0, 255, 136, 0.2);
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .about-image-frame::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(45deg, var(--accent-primary) 0%, transparent 50%),
-                linear-gradient(-45deg, var(--accent-secondary) 0%, transparent 50%);
-            opacity: 0.3;
-        }
-
-        .about-image-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .about-avatar {
             font-family: 'Orbitron', sans-serif;
-            font-size: 6rem;
+            font-size: 8rem;
             font-weight: 900;
             color: var(--accent-primary);
-            opacity: 0.1;
+            text-shadow: 0 0 40px var(--glow-primary);
         }
 
         .about-corner {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 30px; height: 30px;
             border: 2px solid var(--accent-primary);
         }
-
         .about-corner.tl { top: -10px; left: -10px; border-right: none; border-bottom: none; }
         .about-corner.tr { top: -10px; right: -10px; border-left: none; border-bottom: none; }
         .about-corner.bl { bottom: -10px; left: -10px; border-right: none; border-top: none; }
@@ -452,9 +432,7 @@
             margin-bottom: 20px;
         }
 
-        .about-content h3 span {
-            color: var(--accent-primary);
-        }
+        .about-content h3 span { color: var(--accent-primary); }
 
         .about-content p {
             font-size: 1.1rem;
@@ -476,8 +454,7 @@
         }
 
         .highlight-icon {
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             background: rgba(0, 255, 136, 0.1);
             border: 1px solid rgba(0, 255, 136, 0.3);
             display: flex;
@@ -491,7 +468,6 @@
             color: var(--text-body);
         }
 
-        /* Skills Section */
         #skills {
             background: var(--bg-dark);
         }
@@ -541,10 +517,8 @@
         .skill-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 0;
+            top: 0; left: 0;
+            width: 3px; height: 0;
             background: var(--accent-primary);
             transition: height 0.3s;
         }
@@ -555,9 +529,7 @@
             transform: translateX(5px);
         }
 
-        .skill-card:hover::before {
-            height: 100%;
-        }
+        .skill-card:hover::before { height: 100%; }
 
         .skill-card h4 {
             font-family: 'Orbitron', sans-serif;
@@ -587,6 +559,175 @@
             transition: width 1s ease-out;
         }
 
+        /* Experience Section */
+        #experience {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-deep) 100%);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px; height: 14px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--glow-primary);
+        }
+
+        .timeline-date {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-bright);
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            font-size: 1rem;
+            color: var(--accent-secondary);
+            margin-bottom: 15px;
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .timeline-desc li {
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-desc li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+
+        /* Education Section */
+        #education {
+            background: var(--bg-deep);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+        }
+
+        .edu-year {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .edu-degree {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-bright);
+            margin-bottom: 10px;
+        }
+
+        .edu-institute {
+            color: var(--text-body);
+            margin-bottom: 8px;
+        }
+
+        .edu-grade {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Hobbies Section */
+        #hobbies {
+            background: var(--bg-dark);
+        }
+
+        .hobbies-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hobby-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 25px 40px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .hobby-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+        }
+
+        .hobby-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hobby-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-bright);
+            letter-spacing: 1px;
+        }
+
         /* Projects Section */
         #projects {
             background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-deep) 100%);
@@ -612,10 +753,7 @@
         .project-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(123, 47, 255, 0.1));
             opacity: 0;
             transition: opacity 0.4s;
@@ -627,23 +765,18 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow-primary);
         }
 
-        .project-card:hover::before {
-            opacity: 1;
-        }
+        .project-card:hover::before { opacity: 1; }
 
         .project-image {
-            height: 220px;
+            height: 180px;
             background: var(--bg-card-hover);
             position: relative;
-            overflow: hidden;
-        }
-
-        .project-image-placeholder {
-            width: 100%;
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .project-image-placeholder {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.8rem;
             color: var(--text-muted);
@@ -652,14 +785,9 @@
 
         .project-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, var(--bg-card) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
+            bottom: 0; left: 0; right: 0;
+            padding: 15px 20px;
+            background: linear-gradient(to top, var(--bg-card), transparent);
         }
 
         .project-status {
@@ -668,7 +796,7 @@
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 4px;
             background: rgba(0, 255, 136, 0.2);
             color: var(--accent-primary);
@@ -676,22 +804,22 @@
         }
 
         .project-info {
-            padding: 30px;
+            padding: 25px;
             position: relative;
             z-index: 1;
         }
 
         .project-info h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--text-bright);
             margin-bottom: 12px;
         }
 
         .project-info p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.7;
         }
 
@@ -699,14 +827,14 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .tech-tag {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.7rem;
             font-weight: 500;
-            padding: 5px 12px;
+            padding: 4px 10px;
             background: rgba(123, 47, 255, 0.15);
             border: 1px solid rgba(123, 47, 255, 0.3);
             color: var(--accent-secondary);
@@ -732,9 +860,7 @@
             transition: gap 0.3s;
         }
 
-        .project-link:hover {
-            gap: 12px;
-        }
+        .project-link:hover { gap: 12px; }
 
         /* Contact Section */
         #contact {
@@ -782,8 +908,7 @@
         }
 
         .contact-icon {
-            width: 45px;
-            height: 45px;
+            width: 45px; height: 45px;
             background: rgba(0, 255, 136, 0.1);
             border: 1px solid rgba(0, 255, 136, 0.3);
             display: flex;
@@ -832,7 +957,38 @@
             box-shadow: 0 0 50px var(--glow-primary);
         }
 
-        /* Footer */
+        /* Languages Section */
+        .languages-section {
+            max-width: 600px;
+            margin: 50px auto 0;
+            text-align: left;
+        }
+
+        .languages-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: var(--accent-primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .language-name {
+            color: var(--text-body);
+        }
+
+        .language-level {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
         footer {
             background: var(--bg-dark);
             padding: 50px 60px;
@@ -854,9 +1010,7 @@
             color: var(--text-bright);
         }
 
-        .footer-logo span {
-            color: var(--accent-primary);
-        }
+        .footer-logo span { color: var(--accent-primary); }
 
         .footer-social {
             display: flex;
@@ -864,8 +1018,7 @@
         }
 
         .social-link {
-            width: 45px;
-            height: 45px;
+            width: 45px; height: 45px;
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
@@ -889,7 +1042,6 @@
             font-size: 0.9rem;
         }
 
-        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -897,10 +1049,7 @@
         }
 
         @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .delay-1 { animation-delay: 0.1s; }
@@ -909,7 +1058,6 @@
         .delay-4 { animation-delay: 0.4s; }
         .delay-5 { animation-delay: 0.5s; }
 
-        /* Mobile Responsive */
         @media (max-width: 1024px) {
             nav { padding: 20px 30px; }
             section { padding: 80px 30px; }
@@ -923,8 +1071,7 @@
             .nav-links {
                 display: none;
                 position: fixed;
-                top: 70px;
-                left: 0;
+                top: 70px; left: 0;
                 width: 100%;
                 background: var(--bg-dark);
                 flex-direction: column;
@@ -949,7 +1096,6 @@
 </head>
 <body>
 
-    <!-- Background Effects -->
     <div class="grid-bg"></div>
     <div class="particles">
         <div class="particle" style="left: 5%;"></div>
@@ -964,12 +1110,13 @@
         <div class="particle"></div>
     </div>
 
-    <!-- Navigation -->
     <nav>
         <a href="#" class="logo">SHEHRAZ</a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -980,82 +1127,42 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge fade-in">Unity 3D Developer</span>
+            <span class="hero-badge fade-in">Senior Unity Game Developer</span>
             <h1 class="fade-in delay-1">SHEHRAZ <span class="highlight">KHALID</span></h1>
-            <p class="hero-subtitle fade-in delay-2">Building immersive gaming experiences</p>
-            <p class="hero-tagline fade-in delay-3">Senior Unity developer specializing in high-performance gameplay systems, custom shaders, and mobile optimization. Turning complex game mechanics into polished, playable experiences.</p>
+            <p class="hero-subtitle fade-in delay-2">Building immersive 2D & 3D gaming experiences</p>
+            <p class="hero-tagline fade-in delay-3">Experienced software engineer specializing in Unity 2D and 3D development. Dedicated to crafting engaging user experiences and solving complex technical challenges in the gaming industry.</p>
+            
+            <div class="hero-contact fade-in delay-3">
+                <div class="contact-item"><span>📍</span> Lahore, Pakistan</div>
+                <div class="contact-item"><span>📧</span> shehrazkhalid786@gmail.com</div>
+                <div class="contact-item"><span>📱</span> +92 304 4744082</div>
+            </div>
             
             <div class="hero-cta fade-in delay-4">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <a href="Shehraz_Khalid_CV.pdf" download class="btn btn-outline">📄 Download CV</a>
             </div>
 
             <div class="hero-stats fade-in delay-5">
                 <div class="stat">
-                    <span class="stat-number">5+</span>
+                    <span class="stat-number">7+</span>
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">20+</span>
+                    <span class="stat-number">15+</span>
                     <span class="stat-label">Games Shipped</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">1M+</span>
-                    <span class="stat-label">Downloads</span>
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Companies</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-header">
-            <span class="section-tag">// About Me</span>
-            <h2 class="section-title">Crafting Digital Worlds</h2>
-        </div>
-
-        <div class="about-grid">
-            <div class="about-image fade-in">
-                <div class="about-image-frame">
-                    <span class="about-image-text">SK</span>
-                    <div class="about-corner tl"></div>
-                    <div class="about-corner tr"></div>
-                    <div class="about-corner bl"></div>
-                    <div class="about-corner br"></div>
-                </div>
-            </div>
-
-            <div class="about-content fade-in delay-2">
-                <h3>Hello! I'm <span>Shehraz</span></h3>
-                <p>I'm a passionate Unity 3D game developer with over 5 years of experience creating engaging mobile and desktop games. My expertise lies in building performant gameplay systems, custom shader effects, and optimizing games for various platforms.</p>
-                <p>I believe in writing clean, maintainable code and creating memorable gaming experiences that players love. From concept to deployment, I bring a holistic approach to game development.</p>
-
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">🎮</div>
-                        <span class="highlight-text">Gameplay Programming</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✨</div>
-                        <span class="highlight-text">Custom Shaders</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">⚡</div>
-                        <span class="highlight-text">Performance Tuning</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">🚀</div>
-                        <span class="highlight-text">Mobile Optimization</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
     <section id="skills">
         <div class="section-header">
             <span class="section-tag">// Tech Stack</span>
@@ -1064,25 +1171,25 @@
 
         <div class="skills-container">
             <div class="skills-category">
-                <h3>Core Technologies</h3>
+                <h3>Game Development</h3>
                 <div class="skills-grid">
                     <div class="skill-card fade-in">
-                        <h4>Unity 3D / C#</h4>
-                        <p>Expert in Unity engine, gameplay systems, physics, and object pooling</p>
+                        <h4>Unity 3D / 2D</h4>
+                        <p>Expert in Unity engine, Game Physics, Controllers, and cross-platform development for mobile & desktop.</p>
                         <div class="skill-level">
                             <div class="skill-level-bar" style="width: 95%;"></div>
                         </div>
                     </div>
                     <div class="skill-card fade-in delay-1">
-                        <h4>HLSL / Shader Graph</h4>
-                        <p>Custom shaders, post-processing, and visual effects creation</p>
+                        <h4>C# Programming</h4>
+                        <p>Advanced gameplay systems, architecture patterns, and performance optimization.</p>
                         <div class="skill-level">
-                            <div class="skill-level-bar" style="width: 85%;"></div>
+                            <div class="skill-level-bar" style="width: 92%;"></div>
                         </div>
                     </div>
                     <div class="skill-card fade-in delay-2">
-                        <h4>Mobile Optimization</h4>
-                        <p>GPU profiling, memory management, and performance optimization</p>
+                        <h4>Mobile Game Development</h4>
+                        <p>Hyper-casual games, ad integrations, Firebase, and analytics implementation.</p>
                         <div class="skill-level">
                             <div class="skill-level-bar" style="width: 90%;"></div>
                         </div>
@@ -1091,27 +1198,47 @@
             </div>
 
             <div class="skills-category">
-                <h3>Development Tools</h3>
+                <h3>Ad Integrations & Analytics</h3>
                 <div class="skills-grid">
                     <div class="skill-card fade-in">
-                        <h4>Version Control</h4>
-                        <p>Git, GitHub, GitLab with branching strategies and CI/CD pipelines</p>
+                        <h4>AdMob & Max Mediation</h4>
+                        <p>Banner ads, interstitial ads, rewarded videos, and mediation setup.</p>
                         <div class="skill-level">
-                            <div class="skill-level-bar" style="width: 90%;"></div>
+                            <div class="skill-level-bar" style="width: 88%;"></div>
                         </div>
                     </div>
                     <div class="skill-card fade-in delay-1">
-                        <h4>Unity Editor Extensions</h4>
-                        <p>Custom inspectors, editor windows, and automation tools</p>
+                        <h4>Analytics & Tracking</h4>
+                        <p>Firebase, ByteBrew, AppLovin, AppsFlyer integration and tracking.</p>
                         <div class="skill-level">
-                            <div class="skill-level-bar" style="width: 80%;"></div>
+                            <div class="skill-level-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skills-grid">
+                    <div class="skill-card fade-in">
+                        <h4>C#</h4>
+                        <p>Primary language for Unity game development.</p>
+                        <div class="skill-level">
+                            <div class="skill-level-bar" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in delay-1">
+                        <h4>C++</h4>
+                        <p>Game engine fundamentals and performance-critical code.</p>
+                        <div class="skill-level">
+                            <div class="skill-level-bar" style="width: 70%;"></div>
                         </div>
                     </div>
                     <div class="skill-card fade-in delay-2">
-                        <h4>Cross-Platform</h4>
-                        <p>iOS, Android, PC, and WebGL deployment and testing</p>
+                        <h4>JavaScript & PHP</h4>
+                        <p>Web integrations and backend development.</p>
                         <div class="skill-level">
-                            <div class="skill-level-bar" style="width: 88%;"></div>
+                            <div class="skill-level-bar" style="width: 65%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1119,84 +1246,191 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <section id="experience">
+        <div class="section-header">
+            <span class="section-tag">// Career Path</span>
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">Oct 2021 - Present</div>
+                <h3 class="timeline-title">Sr. Games Developer</h3>
+                <p class="timeline-company">OZI Technology — Lahore, Pakistan</p>
+                <ul class="timeline-desc">
+                    <li>Development of 2D and 3D games with expertise in Game Physics and creating controllers from scratch</li>
+                    <li>Designing and implementing mechanics for hyper-casual games</li>
+                    <li>Integration of ad platforms like AdMob Mediation, Max Mediation, and tools such as Firebase, ByteBrew, AppLovin, and AppsFlyer</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item fade-in delay-1">
+                <div class="timeline-date">Jun 2019 - Oct 2021</div>
+                <h3 class="timeline-title">Game Developer / Team Lead</h3>
+                <p class="timeline-company">Survival Tech Valley — Lahore, Pakistan</p>
+                <ul class="timeline-desc">
+                    <li>Led development team in creating Android mobile games using Unity 3D and C#</li>
+                    <li>Managed project timelines and code quality standards</li>
+                    <li>Mentored junior developers and conducted code reviews</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item fade-in delay-2">
+                <div class="timeline-date">Oct 2018 - Jun 2019</div>
+                <h3 class="timeline-title">Games Developer</h3>
+                <p class="timeline-company">Mania Games Studio — Lahore, Pakistan</p>
+                <ul class="timeline-desc">
+                    <li>Developed and shipped multiple Android mobile games</li>
+                    <li>Implemented game mechanics and user interfaces</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item fade-in delay-3">
+                <div class="timeline-date">Mar 2018 - Sep 2018</div>
+                <h3 class="timeline-title">Games Developer</h3>
+                <p class="timeline-company">Gaminators Studio (OZI Groups) — Lahore, Pakistan</p>
+                <ul class="timeline-desc">
+                    <li>Created Android mobile games using Unity 3D and C#</li>
+                    <li>Worked on various casual and mid-core game projects</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header">
+            <span class="section-tag">// Background</span>
+            <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="education-grid">
+            <div class="edu-card fade-in">
+                <div class="edu-year">2020 - 2024</div>
+                <h3 class="edu-degree">Bachelors in Software Engineering</h3>
+                <p class="edu-institute">Virtual University of Pakistan, Lahore</p>
+                <p class="edu-grade">Focus on Software Development & Game Engineering</p>
+            </div>
+
+            <div class="edu-card fade-in delay-1">
+                <div class="edu-year">2016 - 2018</div>
+                <h3 class="edu-degree">Diploma of Associate Engineering</h3>
+                <p class="edu-institute">Institute of Engineering & Technology, Mughalpura Lahore</p>
+                <p class="edu-grade">Electrical Technology • 76%</p>
+            </div>
+
+            <div class="edu-card fade-in delay-2">
+                <div class="edu-year">2011 - 2013</div>
+                <h3 class="edu-degree">Matriculation</h3>
+                <p class="edu-institute">Govt. High School, Baghbanpur, Lahore</p>
+                <p class="edu-grade">59%</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <div class="section-header">
+            <span class="section-tag">// Beyond Work</span>
+            <h2 class="section-title">Hobbies & Interests</h2>
+        </div>
+
+        <div class="hobbies-grid">
+            <div class="hobby-item fade-in">
+                <div class="hobby-icon">🎮</div>
+                <div class="hobby-name">Game Development</div>
+            </div>
+            <div class="hobby-item fade-in delay-1">
+                <div class="hobby-icon">🤖</div>
+                <div class="hobby-name">Robotics</div>
+            </div>
+            <div class="hobby-item fade-in delay-2">
+                <div class="hobby-icon">💻</div>
+                <div class="hobby-name">Programming</div>
+            </div>
+            <div class="hobby-item fade-in delay-3">
+                <div class="hobby-icon">🌐</div>
+                <div class="hobby-name">Social Networking</div>
+            </div>
+            <div class="hobby-item fade-in delay-4">
+                <div class="hobby-icon">🔍</div>
+                <div class="hobby-name">Exploring & Learning</div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
         <div class="section-header">
-            <span class="section-tag">// My Work</span>
+            <span class="section-tag">// Portfolio</span>
             <h2 class="section-title">Featured Projects</h2>
         </div>
 
         <div class="projects-grid">
-            <!-- Project 1 -->
             <div class="project-card fade-in">
                 <div class="project-image">
-                    <div class="project-image-placeholder">MOBILE SHADER FX</div>
+                    <div class="project-image-placeholder">HYPER CASUAL</div>
                     <div class="project-overlay">
-                        <span class="project-status">Featured</span>
+                        <span class="project-status">Shipped</span>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>Mobile Shader FX Pack</h3>
-                    <p>High-performance mobile-optimized visual effects including neon glow, volumetric bloom, and stylized rendering for Unity URP.</p>
+                    <h3>Hyper-Casual Game Collection</h3>
+                    <p>Multiple hyper-casual mobile games with polished gameplay mechanics, optimized performance, and integrated ad monetization.</p>
                     <div class="project-tech-list">
-                        <span class="tech-tag">Unity URP</span>
-                        <span class="tech-tag">HLSL</span>
-                        <span class="tech-tag">Mobile</span>
+                        <span class="tech-tag">Unity 3D</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">AdMob</span>
+                        <span class="tech-tag">Firebase</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Code →</a>
-                        <a href="#" class="project-link">Demo →</a>
+                        <a href="#" class="project-link">Case Study →</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="project-card fade-in delay-1">
                 <div class="project-image">
-                    <div class="project-image-placeholder">TILE SYSTEM</div>
+                    <div class="project-image-placeholder">MOBILE GAMES</div>
                     <div class="project-overlay">
                         <span class="project-status">Released</span>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>Directional Tile System</h3>
-                    <p>Fast-paced tile-based movement mechanic with smooth animations and optimized object pooling for action rail shooters.</p>
+                    <h3>Android Game Portfolio</h3>
+                    <p>Collection of Android mobile games developed for various clients, featuring unique mechanics and engaging gameplay loops.</p>
                     <div class="project-tech-list">
-                        <span class="tech-tag">Unity 3D</span>
+                        <span class="tech-tag">Unity 3D/2D</span>
                         <span class="tech-tag">C#</span>
-                        <span class="tech-tag">Gameplay</span>
+                        <span class="tech-tag">Android</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Code →</a>
+                        <a href="#" class="project-link">View Games →</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3 -->
             <div class="project-card fade-in delay-2">
                 <div class="project-image">
-                    <div class="project-image-placeholder">DEV TOOLS</div>
+                    <div class="project-image-placeholder">AD INTEGRATION</div>
                     <div class="project-overlay">
-                        <span class="project-status">Open Source</span>
+                        <span class="project-status">Production</span>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>Automation & Tools Suite</h3>
-                    <p>Editor extensions and external tool communication nodes for streamlined development workflows and asset management.</p>
+                    <h3>Ad Integration Framework</h3>
+                    <p>Custom ad mediation framework integrating AdMob, Max, AppLovin with analytics and tracking via Firebase, ByteBrew, AppsFlyer.</p>
                     <div class="project-tech-list">
-                        <span class="tech-tag">Editor Scripting</span>
+                        <span class="tech-tag">Unity</span>
                         <span class="tech-tag">C#</span>
-                        <span class="tech-tag">CI/CD</span>
+                        <span class="tech-tag">AppLovin</span>
+                        <span class="tech-tag">Analytics</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Code →</a>
+                        <a href="#" class="project-link">Learn More →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="section-header">
             <span class="section-tag">// Get In Touch</span>
@@ -1207,36 +1441,51 @@
             <p class="contact-intro">I'm always interested in hearing about new projects and opportunities. Whether you have a game concept, technical challenge, or just want to connect, feel free to reach out.</p>
 
             <div class="contact-links">
-                <a href="mailto:shehraz.khalid@email.com" class="contact-link">
+                <a href="mailto:shehrazkhalid786@gmail.com" class="contact-link">
                     <div class="contact-icon">✉️</div>
                     <div class="contact-text">
                         <span class="contact-label">Email</span>
-                        <span class="contact-value">your.email@email.com</span>
+                        <span class="contact-value">shehrazkhalid786@gmail.com</span>
+                    </div>
+                </a>
+                <a href="tel:+923044744082" class="contact-link">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-text">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+92 304 4744082</span>
                     </div>
                 </a>
                 <a href="#" class="contact-link">
                     <div class="contact-icon">💬</div>
                     <div class="contact-text">
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value">@shehrazkhalid</span>
-                    </div>
-                </a>
-                <a href="#" class="contact-link">
-                    <div class="contact-icon">🐙</div>
-                    <div class="contact-text">
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-value">@shehrazkhalid</span>
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Lahore, Pakistan</span>
                     </div>
                 </a>
             </div>
 
-            <a href="mailto:shehraz.khalid@email.com" class="email-btn">
+            <a href="mailto:shehrazkhalid786@gmail.com" class="email-btn">
                 Send Message ✉️
             </a>
+
+            <div class="languages-section fade-in">
+                <h3 class="languages-title">Languages</h3>
+                <div class="language-item">
+                    <span class="language-name">Urdu</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Punjabi</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Beginner</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">SHEHRAZ<span>.</span>DEV</div>
@@ -1251,7 +1500,6 @@
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -1259,14 +1507,12 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile nav on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1280,7 +1526,6 @@
             });
         });
 
-        // Skill bar animation on scroll
         const observerOptions = {
             threshold: 0.5,
             rootMargin: '0px'
