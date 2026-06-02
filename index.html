@@ -1,19 +1,343 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Developer Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d0e15;
+            --card-bg: #161925;
+            --accent-color: #00ffcc; /* Neon Cyan Glow */
+            --text-color: #f5f5f7;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #23263a;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0 60px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .skill-tag {
+            background: rgba(0, 255, 204, 0.05);
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            color: var(--accent-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #23263a;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #1e2235;
+            object-fit: cover;
+            border-bottom: 1px solid #23263a;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tech-badge {
+            background-color: #23263a;
+            color: var(--text-color);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #23263a;
+        }
+
+        .contact p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .btn-contact {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .btn-contact:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; gap: 15px; }
+            nav ul { margin-top: 10px; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Allah Rakha</h1>
-    <p>Unity Game Developer</p>
 
-    <h2>Projects</h2>
-    <ul>
-        <li>Game Project 1</li>
-        <li>Game Project 2</li>
-    </ul>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">SHEHRAZ.DEV</div>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Hi, I'm <span>Shehraz Khalid</span></h1>
+            <p>Senior Unity 3D Game Developer specializing in high-performance gameplay systems, advanced shaders, and mobile optimization.</p>
+            
+            <div class="skills-container">
+                <span class="skill-tag">Unity 3D</span>
+                <span class="skill-tag">C# (C-Sharp)</span>
+                <span class="skill-tag">HLSL / Shader Graph</span>
+                <span class="skill-tag">Mobile Optimization</span>
+                <span class="skill-tag">Gameplay Programming</span>
+                <span class="skill-tag">Git & CI/CD</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Featured Work</h2>
+            
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <!-- Replace src with your game screenshot or GIF link -->
+                    <img src="https://via.placeholder.com/400x200/161925/00ffcc?text=Custom+Shaders+Demo" alt="Project 1" class="project-image">
+                    <div class="project-info">
+                        <h3>Mobile Shader FX Pack</h3>
+                        <p>Custom mobile-optimized visual effects including neon glow, volumetric bloom, and stylized environmental rendering.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Unity</span>
+                            <span class="tech-badge">HLSL</span>
+                            <span class="tech-badge">URP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/161925/00ffcc?text=Rail+Shooter+Mechanic" alt="Project 2" class="project-image">
+                    <div class="project-info">
+                        <h3>Directional Tile System</h3>
+                        <p>A fast-paced tile-based movement mechanic developed for an action rail shooter project with smooth object pooling.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Unity 3D</span>
+                            <span class="tech-badge">C#</span>
+                            <span class="tech-badge">Game Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/161925/00ffcc?text=Custom+Tools" alt="Project 3" class="project-image">
+                    <div class="project-info">
+                        <h3>Automation & Tools Integration</h3>
+                        <p>Editor extensions and external tool communication nodes built to streamline development workflows and assets management.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Unity Editor</span>
+                            <span class="tech-badge">C#</span>
+                            <span class="tech-badge">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title">Let's Build Something Great</h2>
+            <p>I'm always open to discussing advanced gameplay mechanics, rendering optimization, or technical challenges.</p>
+            <!-- Change the email to yours -->
+            <a href="mailto:your.email@example.com" class="btn-contact">Get In Touch</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Shehraz Khalid. Built with GitHub Pages.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
