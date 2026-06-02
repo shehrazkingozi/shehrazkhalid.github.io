@@ -35,39 +35,23 @@
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 4px; }
 
-        .grid-bg {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -2;
-            background-image: 
-                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridPulse 8s ease-in-out infinite;
-        }
-        @keyframes gridPulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
         /* Navigation */
         nav {
             position: fixed;
             top: 0; left: 0;
             width: 100%;
-            padding: 20px 60px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: linear-gradient(to bottom, rgba(3, 3, 6, 0.95), transparent);
+            background: linear-gradient(to bottom, rgba(3, 3, 6, 0.98), transparent);
             backdrop-filter: blur(10px);
         }
 
         .logo {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--text-bright);
             text-decoration: none;
@@ -78,216 +62,260 @@
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             list-style: none;
         }
 
         .nav-links a {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: var(--text-body);
             text-decoration: none;
             letter-spacing: 2px;
             text-transform: uppercase;
-            position: relative;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover { color: var(--text-bright); }
+        .nav-links a:hover { color: var(--accent-primary); }
 
         .back-link {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--accent-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: gap 0.3s;
         }
-        .back-link:hover { gap: 12px; }
+        .back-link:hover { text-decoration: underline; }
 
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 10px;
-        }
-        .nav-toggle span {
-            width: 25px; height: 2px;
-            background: var(--accent-primary);
-        }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .nav-toggle span { width: 25px; height: 2px; background: var(--accent-primary); }
 
-        /* Hero Section */
+        /* Play Store Style Hero */
         .project-hero {
-            min-height: 60vh;
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg-image {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) saturate(1.2);
+        }
+
+        .hero-bg-video {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) saturate(1.2);
+        }
+
+        .hero-gradient {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(3, 3, 6, 0.3) 0%,
+                rgba(3, 3, 6, 0.6) 50%,
+                rgba(3, 3, 6, 0.95) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            display: flex;
+            gap: 30px;
+            align-items: flex-end;
+        }
+
+        .project-icon {
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 60px var(--glow-primary);
+            position: relative;
+        }
+
+        .project-icon img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px; height: 60px;
+            background: rgba(0, 255, 136, 0.9);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 60px 60px;
-            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px var(--glow-primary);
         }
 
-        .project-status {
+        .play-button-overlay:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--accent-primary);
+        }
+
+        .play-button-overlay::after {
+            content: '';
+            width: 0; height: 0;
+            border-left: 18px solid var(--bg-deep);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 4px;
+        }
+
+        .hero-info {
+            flex: 1;
+            padding-bottom: 20px;
+        }
+
+        .project-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 10px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-developer {
+            font-size: 1.1rem;
+            color: var(--accent-primary);
+            margin-bottom: 15px;
+        }
+
+        .project-status-badge {
             display: inline-block;
             font-family: 'Orbitron', sans-serif;
             font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            padding: 6px 16px;
-            border-radius: 4px;
-            background: rgba(0, 255, 136, 0.15);
+            padding: 5px 15px;
+            border-radius: 20px;
+            background: rgba(0, 255, 136, 0.2);
             color: var(--accent-primary);
             border: 1px solid var(--accent-primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .project-hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--text-bright);
-            margin-bottom: 20px;
-            max-width: 800px;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .meta-item {
-            text-align: center;
-        }
-
-        .meta-label {
-            font-size: 0.75rem;
+        .project-category-tag {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
 
-        .meta-value {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            color: var(--accent-primary);
-        }
-
-        /* Image Gallery */
-        .gallery-section {
-            padding: 40px 60px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .main-image {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: var(--bg-card);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .main-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .main-image .placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            letter-spacing: 4px;
-        }
-
-        .thumbnail-strip {
+        .hero-actions {
             display: flex;
             gap: 15px;
-            overflow-x: auto;
-            padding-bottom: 10px;
+            margin-top: 20px;
         }
 
-        .thumbnail {
-            width: 150px;
-            height: 100px;
-            flex-shrink: 0;
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: var(--accent-primary);
+            color: var(--bg-deep);
+            border: none;
             border-radius: 8px;
-            overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
             cursor: pointer;
-            border: 2px solid transparent;
+            text-decoration: none;
             transition: all 0.3s;
         }
 
-        .thumbnail:hover,
-        .thumbnail.active {
-            border-color: var(--accent-primary);
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px var(--glow-primary);
         }
 
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .action-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-bright);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Video Section */
-        .video-section {
-            padding: 40px 60px;
-            max-width: 1000px;
-            margin: 0 auto;
+        .action-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
         }
 
-        .video-container {
-            width: 100%;
-            aspect-ratio: 16/9;
+        /* Stats Bar */
+        .stats-bar {
             background: var(--bg-card);
-            border-radius: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stats-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            gap: 8px;
         }
 
-        .video-placeholder {
-            text-align: center;
+        .stats-item .icon {
+            font-size: 1.2rem;
+        }
+
+        .stats-item .label {
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
 
-        .video-placeholder .icon {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .video-placeholder .text {
+        .stats-item .value {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--text-bright);
         }
 
-        /* Content Sections */
-        .content-section {
-            padding: 60px;
-            max-width: 1000px;
+        /* Screenshots Section */
+        .screenshots-section {
+            padding: 60px 40px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--text-bright);
             margin-bottom: 25px;
             display: flex;
@@ -300,17 +328,89 @@
             color: var(--accent-primary);
         }
 
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot-card {
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .screenshot-card:hover {
+            border-color: var(--accent-primary);
+            transform: scale(1.02);
+        }
+
+        .screenshot-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .description {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             line-height: 1.9;
             white-space: pre-line;
+            color: var(--text-body);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        .feature-icon {
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+        }
+
+        .feature-text {
+            color: var(--text-body);
+            font-size: 1.05rem;
         }
 
         /* Tech Stack */
+        .tech-section {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .tech-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
         }
 
         .tech-tag {
@@ -321,117 +421,95 @@
             background: rgba(123, 47, 255, 0.15);
             border: 1px solid rgba(123, 47, 255, 0.3);
             color: var(--accent-secondary);
-            border-radius: 4px;
+            border-radius: 20px;
         }
 
-        /* Features List */
-        .features-list {
-            display: grid;
-            gap: 15px;
+        /* Video Section */
+        .video-section {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px 20px;
+        .video-container {
+            aspect-ratio: 16/9;
             background: var(--bg-card);
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-primary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .feature-icon {
-            color: var(--accent-primary);
-            font-size: 1.2rem;
+        .video-container iframe,
+        .video-container video {
+            width: 100%; height: 100%;
         }
 
-        .feature-text {
-            color: var(--text-body);
+        /* Downloads Section */
+        .downloads-section {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        /* Download Section */
-        .download-section {
-            display: flex;
+        .download-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
         }
 
-        .download-btn {
+        .download-card {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 15px 30px;
+            gap: 20px;
+            padding: 25px;
             background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
             text-decoration: none;
             transition: all 0.3s;
         }
 
-        .download-btn:hover {
+        .download-card:hover {
             background: var(--bg-card-hover);
             border-color: var(--accent-primary);
             transform: translateY(-3px);
         }
 
-        .download-btn .icon {
+        .download-icon {
+            width: 50px; height: 50px;
+            background: rgba(0, 255, 136, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
         }
 
-        .download-btn .text {
-            text-align: left;
+        .download-info {
+            flex: 1;
         }
 
-        .download-btn .label {
-            font-size: 0.75rem;
+        .download-label {
+            font-size: 0.8rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .download-btn .value {
+        .download-name {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-bright);
         }
 
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .stat-value {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-primary);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 5px;
-        }
-
-        /* Navigation Buttons */
+        /* Project Navigation */
         .project-nav {
-            padding: 60px;
-            max-width: 1000px;
+            padding: 40px;
+            max-width: 900px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .nav-btn {
@@ -443,65 +521,113 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 0.8rem;
             transition: color 0.3s;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border-radius: 8px;
         }
 
-        .nav-btn:hover { color: var(--accent-primary); }
+        .nav-btn:hover { color: var(--accent-primary); background: var(--bg-card-hover); }
         .nav-btn.disabled { opacity: 0.3; pointer-events: none; }
 
         /* Footer */
         footer {
             background: var(--bg-dark);
-            padding: 40px 60px;
+            padding: 40px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        footer p { color: var(--text-muted); }
+        footer a { color: var(--accent-primary); text-decoration: none; }
 
-        footer a {
-            color: var(--accent-primary);
-            text-decoration: none;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            nav { padding: 15px 20px; }
-            .nav-links { 
-                display: none; 
-                position: fixed;
-                top: 60px; left: 0;
-                width: 100%;
-                background: var(--bg-dark);
-                flex-direction: column;
-                padding: 20px;
-            }
-            .nav-links.active { display: flex; }
-            .nav-toggle { display: flex; }
-            .project-hero { padding: 100px 20px 40px; }
-            .project-hero h1 { font-size: 2rem; }
-            .project-meta { gap: 20px; }
-            .gallery-section, .video-section, .content-section { padding: 30px 20px; }
-            .project-nav { padding: 40px 20px; flex-direction: column; gap: 20px; }
-            .download-section { flex-direction: column; }
-        }
-
+        /* Loading */
         .loading {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 50vh;
+            min-height: 60vh;
             font-family: 'Orbitron', sans-serif;
             color: var(--accent-primary);
             letter-spacing: 3px;
         }
+
+        /* Modal for image preview */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 20px;
+            width: 50px; height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover { background: var(--accent-tertiary); }
+
+        .modal-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-modal.active { display: flex; }
+
+        .video-modal-content {
+            width: 90%;
+            max-width: 1000px;
+            aspect-ratio: 16/9;
+        }
+
+        .video-modal-content iframe,
+        .video-modal-content video {
+            width: 100%; height: 100%;
+            border-radius: 12px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav { padding: 12px 20px; }
+            .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+            .hero-content { flex-direction: column; align-items: center; text-align: center; padding: 20px; }
+            .project-icon { width: 140px; height: 140px; }
+            .project-title { font-size: 1.8rem; }
+            .hero-actions { justify-content: center; flex-wrap: wrap; }
+            .stats-container { padding: 20px; justify-content: center; }
+            .screenshots-section, .content-section, .features-section, .tech-section, .video-section, .downloads-section { padding: 30px 20px; }
+            .project-nav { padding: 30px 20px; flex-direction: column; gap: 15px; }
+        }
     </style>
 </head>
 <body>
-    <div class="grid-bg"></div>
-
     <nav>
         <a href="index.html" class="logo">SHEHRAZ</a>
         <ul class="nav-links" id="navLinks">
@@ -511,16 +637,24 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
-        <a href="projects.html" class="back-link">← Back to Projects</a>
-        <div class="nav-toggle" id="navToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <a href="projects.html" class="back-link">← All Projects</a>
+        <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
     </nav>
 
     <div id="project-content">
         <div class="loading">LOADING PROJECT...</div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal-overlay" id="imageModal">
+        <button class="modal-close" onclick="closeImageModal()">×</button>
+        <img class="modal-image" id="modalImage" src="" alt="">
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <button class="modal-close" onclick="closeVideoModal()">×</button>
+        <div class="video-modal-content" id="videoModalContent"></div>
     </div>
 
     <footer>
@@ -528,7 +662,6 @@
     </footer>
 
     <script>
-        // Mobile nav toggle
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
         navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
@@ -536,11 +669,9 @@
             link.addEventListener('click', () => navLinks.classList.remove('active'));
         });
 
-        // Get project ID from URL
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('id');
 
-        // Load project data
         async function loadProject() {
             try {
                 const response = await fetch('data/projects.json');
@@ -549,206 +680,227 @@
                 
                 if (!project) {
                     document.getElementById('project-content').innerHTML = `
-                        <div class="project-hero" style="min-height:80vh">
-                            <div>
-                                <h1 style="color: var(--accent-tertiary)">Project Not Found</h1>
-                                <a href="projects.html" class="back-link" style="margin-top:20px">← Back to Projects</a>
-                            </div>
+                        <div class="loading" style="min-height:80vh; flex-direction:column;">
+                            <h2 style="color:var(--accent-tertiary);margin-bottom:20px;">Project Not Found</h2>
+                            <a href="projects.html" style="color:var(--accent-primary);font-family:'Orbitron',sans-serif;">← Back to Projects</a>
                         </div>
                     `;
                     return;
                 }
 
-                // Get prev/next projects
                 const currentIndex = data.projects.findIndex(p => p.id === projectId);
                 const prevProject = currentIndex > 0 ? data.projects[currentIndex - 1] : null;
                 const nextProject = currentIndex < data.projects.length - 1 ? data.projects[currentIndex + 1] : null;
 
-                // Build images HTML
-                const imagesHtml = project.images.map((img, i) => 
-                    `<div class="thumbnail ${i === 0 ? 'active' : ''}" onclick="changeMainImage('${img}')">
-                        <img src="${img}" alt="Screenshot ${i + 1}">
-                    </div>`
-                ).join('');
+                const heroImage = project.images && project.images[0] ? project.images[0] : 'https://via.placeholder.com/1920x1080/12121a/00ff88?text=' + encodeURIComponent(project.title);
+                const iconImage = project.thumbnail || heroImage;
 
-                // Build tech stack HTML
-                const techHtml = project.technologies.map(tech => 
-                    `<span class="tech-tag">${tech}</span>`
-                ).join('');
-
-                // Build features HTML
-                const featuresHtml = project.features.map(feature => 
-                    `<div class="feature-item">
-                        <span class="feature-icon">▹</span>
-                        <span class="feature-text">${feature}</span>
-                    </div>`
-                ).join('');
-
-                // Build download buttons
-                let downloadHtml = '';
-                if (project.apkUrl) {
-                    downloadHtml += `
-                        <a href="${project.apkUrl}" class="download-btn" target="_blank">
-                            <span class="icon">📱</span>
-                            <div class="text">
-                                <div class="label">Download</div>
-                                <div class="value">APK File</div>
-                            </div>
-                        </a>`;
+                let screenshotsHtml = '';
+                if (project.images && project.images.length > 0) {
+                    screenshotsHtml = project.images.map((img, i) => 
+                        `<div class="screenshot-card" onclick="openImageModal('${img}')">
+                            <img src="${img}" alt="Screenshot ${i + 1}">
+                        </div>`
+                    ).join('');
                 }
-                if (project.playStoreUrl) {
-                    downloadHtml += `
-                        <a href="${project.playStoreUrl}" class="download-btn" target="_blank">
-                            <span class="icon">▶️</span>
-                            <div class="text">
-                                <div class="label">Get on</div>
-                                <div class="value">Play Store</div>
+
+                let videoHtml = '';
+                if (project.videoUrl) {
+                    videoHtml = `
+                        <section class="video-section">
+                            <h2 class="section-title">Gameplay Video</h2>
+                            <div class="video-container">
+                                <iframe src="${getEmbedUrl(project.videoUrl)}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
                             </div>
-                        </a>`;
+                        </section>
+                    `;
+                }
+
+                let downloadsHtml = '';
+                const downloadItems = [];
+                if (project.playStoreUrl) {
+                    downloadItems.push(`
+                        <a href="${project.playStoreUrl}" class="download-card" target="_blank">
+                            <div class="download-icon">▶️</div>
+                            <div class="download-info">
+                                <div class="download-label">Get it on</div>
+                                <div class="download-name">Google Play</div>
+                            </div>
+                        </a>
+                    `);
+                }
+                if (project.apkUrl) {
+                    downloadItems.push(`
+                        <a href="${project.apkUrl}" class="download-card" target="_blank">
+                            <div class="download-icon">📱</div>
+                            <div class="download-info">
+                                <div class="download-label">Direct Download</div>
+                                <div class="download-name">APK File</div>
+                            </div>
+                        </a>
+                    `);
                 }
                 if (project.videoUrl) {
-                    downloadHtml += `
-                        <a href="${project.videoUrl}" class="download-btn" target="_blank">
-                            <span class="icon">🎬</span>
-                            <div class="text">
-                                <div class="label">Watch</div>
-                                <div class="value">Video Demo</div>
+                    downloadItems.push(`
+                        <a href="#" class="download-card" onclick="openVideoModal('${project.videoUrl}'); return false;">
+                            <div class="download-icon">🎬</div>
+                            <div class="download-info">
+                                <div class="download-label">Watch</div>
+                                <div class="download-name">Video Demo</div>
                             </div>
-                        </a>`;
+                        </a>
+                    `);
+                }
+                if (downloadItems.length > 0) {
+                    downloadsHtml = `
+                        <section class="downloads-section">
+                            <h2 class="section-title">Downloads & Links</h2>
+                            <div class="download-cards">${downloadItems.join('')}</div>
+                        </section>
+                    `;
                 }
 
-                // Render project
                 document.getElementById('project-content').innerHTML = `
                     <section class="project-hero">
-                        <div>
-                            <span class="project-status">${project.status.toUpperCase()}</span>
-                            <h1>${project.title}</h1>
-                            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">${project.shortDescription}</p>
-                            
-                            <div class="project-meta">
-                                <div class="meta-item">
-                                    <div class="meta-label">Role</div>
-                                    <div class="meta-value">${project.role}</div>
-                                </div>
-                                <div class="meta-item">
-                                    <div class="meta-label">Duration</div>
-                                    <div class="meta-value">${project.duration}</div>
-                                </div>
-                                <div class="meta-item">
-                                    <div class="meta-label">Team</div>
-                                    <div class="meta-value">${project.teamSize} Devs</div>
-                                </div>
-                                <div class="meta-item">
-                                    <div class="meta-label">Platform</div>
-                                    <div class="meta-value">${project.platform}</div>
-                                </div>
-                                <div class="meta-item">
-                                    <div class="meta-label">Downloads</div>
-                                    <div class="meta-value">${project.downloads}</div>
+                        <div class="hero-background">
+                            <img class="hero-bg-image" src="${heroImage}" alt="" onerror="this.style.display='none'">
+                            <div class="hero-gradient"></div>
+                        </div>
+                        <div class="hero-content">
+                            <div class="project-icon">
+                                <img src="${iconImage}" alt="${project.title}">
+                                <div class="play-button-overlay" onclick="openVideoModal('${project.videoUrl || ''}')"></div>
+                            </div>
+                            <div class="hero-info">
+                                <span class="project-status-badge">${project.status.toUpperCase()}</span>
+                                <h1 class="project-title">${project.title}</h1>
+                                <p class="project-developer">by Shehraz Khalid</p>
+                                <p class="project-category-tag">${project.category === 'mobile' ? '📱 Mobile Game' : project.category === 'tools' ? '🛠️ Tools & Framework' : '🌐 Web Game'}</p>
+                                <div class="hero-actions">
+                                    ${project.videoUrl ? `<button class="action-btn" onclick="openVideoModal('${project.videoUrl}')">▶️ Watch Video</button>` : ''}
+                                    ${project.playStoreUrl ? `<a href="${project.playStoreUrl}" class="action-btn secondary" target="_blank">▶️ Play Store</a>` : ''}
+                                    ${project.apkUrl ? `<a href="${project.apkUrl}" class="action-btn secondary" target="_blank">📥 Install APK</a>` : ''}
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <section class="gallery-section">
-                        <div class="main-image" id="mainImage">
-                            <img src="${project.images[0]}" alt="${project.title}">
+                    <div class="stats-bar">
+                        <div class="stats-container">
+                            <div class="stats-item"><span class="icon">📅</span><span class="label">Year:</span><span class="value">${project.year}</span></div>
+                            <div class="stats-item"><span class="icon">⏱️</span><span class="label">Duration:</span><span class="value">${project.duration}</span></div>
+                            <div class="stats-item"><span class="icon">👥</span><span class="label">Team:</span><span class="value">${project.teamSize} Devs</span></div>
+                            <div class="stats-item"><span class="icon">📱</span><span class="label">Platform:</span><span class="value">${project.platform}</span></div>
+                            <div class="stats-item"><span class="icon">👤</span><span class="label">Role:</span><span class="value">${project.role}</span></div>
+                            ${project.downloads ? `<div class="stats-item"><span class="icon">📥</span><span class="label">Downloads:</span><span class="value">${project.downloads}</span></div>` : ''}
                         </div>
-                        <div class="thumbnail-strip">
-                            ${imagesHtml}
-                        </div>
-                    </section>
+                    </div>
 
-                    ${project.videoUrl ? `
-                    <section class="video-section">
-                        <div class="video-container">
-                            <iframe width="100%" height="100%" src="${project.videoUrl}" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>
-                        </div>
+                    <section class="screenshots-section">
+                        <h2 class="section-title">Screenshots</h2>
+                        <div class="screenshots-grid">${screenshotsHtml}</div>
                     </section>
-                    ` : ''}
 
                     <section class="content-section">
                         <h2 class="section-title">About This Project</h2>
                         <p class="description">${project.description}</p>
                     </section>
 
-                    <section class="content-section">
-                        <h2 class="section-title">Stats</h2>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <span class="stat-value">${project.downloads}</span>
-                                <span class="stat-label">Downloads</span>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-value">${project.duration}</span>
-                                <span class="stat-label">Duration</span>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-value">${project.teamSize}</span>
-                                <span class="stat-label">Team Size</span>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-value">${project.year}</span>
-                                <span class="stat-label">Year</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="content-section">
-                        <h2 class="section-title">Technologies Used</h2>
-                        <div class="tech-grid">
-                            ${techHtml}
-                        </div>
-                    </section>
-
-                    <section class="content-section">
+                    ${project.features && project.features.length > 0 ? `
+                    <section class="features-section">
                         <h2 class="section-title">Key Features</h2>
-                        <div class="features-list">
-                            ${featuresHtml}
-                        </div>
-                    </section>
-
-                    ${downloadHtml ? `
-                    <section class="content-section">
-                        <h2 class="section-title">Downloads & Links</h2>
-                        <div class="download-section">
-                            ${downloadHtml}
+                        <div class="features-grid">
+                            ${project.features.map(f => `
+                                <div class="feature-item">
+                                    <span class="feature-icon">▹</span>
+                                    <span class="feature-text">${f}</span>
+                                </div>
+                            `).join('')}
                         </div>
                     </section>
                     ` : ''}
 
+                    <section class="tech-section">
+                        <h2 class="section-title">Technologies Used</h2>
+                        <div class="tech-grid">
+                            ${project.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                        </div>
+                    </section>
+
+                    ${videoHtml}
+                    ${downloadsHtml}
+
                     <nav class="project-nav">
                         <a href="project.html?id=${prevProject?.id || ''}" class="nav-btn ${!prevProject ? 'disabled' : ''}">
-                            ← ${prevProject ? prevProject.title : 'No Previous Project'}
+                            ← ${prevProject ? prevProject.title : 'No Previous'}
                         </a>
                         <a href="project.html?id=${nextProject?.id || ''}" class="nav-btn ${!nextProject ? 'disabled' : ''}">
-                            ${nextProject ? nextProject.title : 'No Next Project'} →
+                            ${nextProject ? nextProject.title : 'No Next'} →
                         </a>
                     </nav>
                 `;
 
-                // Update page title
                 document.title = `${project.title} | Shehraz Khalid`;
 
             } catch (error) {
-                console.error('Error loading project:', error);
+                console.error('Error:', error);
                 document.getElementById('project-content').innerHTML = `
-                    <div class="project-hero" style="min-height:80vh">
-                        <div>
-                            <h1 style="color: var(--accent-tertiary)">Error Loading Project</h1>
-                            <p style="color: var(--text-muted); margin: 20px 0;">Please try again later.</p>
-                            <a href="projects.html" class="back-link">← Back to Projects</a>
-                        </div>
+                    <div class="loading" style="min-height:80vh; flex-direction:column;">
+                        <h2 style="color:var(--accent-tertiary);margin-bottom:20px;">Error Loading Project</h2>
+                        <a href="projects.html" style="color:var(--accent-primary);font-family:'Orbitron',sans-serif;">← Back to Projects</a>
                     </div>
                 `;
             }
         }
 
-        function changeMainImage(src) {
-            document.querySelector('.main-image img').src = src;
-            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+        function getEmbedUrl(url) {
+            if (!url) return '';
+            // YouTube
+            if (url.includes('youtube.com/watch')) {
+                const videoId = new URL(url).searchParams.get('v');
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            }
+            if (url.includes('youtu.be/')) {
+                const videoId = url.split('youtu.be/')[1].split('?')[0];
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            }
+            // Vimeo
+            if (url.includes('vimeo.com/')) {
+                const videoId = url.split('vimeo.com/')[1].split('?')[0];
+                return `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+            }
+            return url;
         }
+
+        function openImageModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').classList.add('active');
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').classList.remove('active');
+        }
+
+        function openVideoModal(url) {
+            if (!url) return;
+            document.getElementById('videoModalContent').innerHTML = `
+                <iframe src="${getEmbedUrl(url)}" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+            `;
+            document.getElementById('videoModal').classList.add('active');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('videoModal').classList.remove('active');
+            document.getElementById('videoModalContent').innerHTML = '';
+        }
+
+        document.getElementById('imageModal').addEventListener('click', (e) => {
+            if (e.target.id === 'imageModal') closeImageModal();
+        });
+
+        document.getElementById('videoModal').addEventListener('click', (e) => {
+            if (e.target.id === 'videoModal') closeVideoModal();
+        });
 
         loadProject();
     </script>

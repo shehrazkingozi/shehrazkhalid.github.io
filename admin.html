@@ -410,6 +410,210 @@
             margin-top: 5px;
         }
 
+        /* Multi-image uploader */
+        .image-uploader {
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            background: var(--bg-dark);
+        }
+
+        .image-uploader-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .image-uploader-header h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-bright);
+        }
+
+        .thumbnail-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .thumbnail-selector select {
+            padding: 8px 12px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: var(--text-bright);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .image-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .image-preview-item {
+            position: relative;
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            background: var(--bg-card);
+        }
+
+        .image-preview-item.thumbnail {
+            border-color: var(--accent-primary);
+        }
+
+        .image-preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-preview-item .placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--text-muted);
+        }
+
+        .image-preview-item .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 45, 106, 0.9);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-preview-item:hover .remove-btn {
+            opacity: 1;
+        }
+
+        .image-preview-item .thumbnail-badge {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            background: var(--accent-primary);
+            color: var(--bg-deep);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .image-add-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .image-add-btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 15px;
+            border: 2px dashed rgba(0, 255, 136, 0.3);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--accent-primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .image-add-btn:hover {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: var(--accent-primary);
+        }
+
+        /* Video uploader */
+        .video-uploader {
+            border: 2px dashed rgba(123, 47, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            background: var(--bg-dark);
+        }
+
+        .video-uploader h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-bright);
+            margin-bottom: 15px;
+        }
+
+        .video-option {
+            margin-bottom: 20px;
+        }
+
+        .video-option-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .video-option-header span {
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+
+        .video-preview {
+            margin-top: 15px;
+            aspect-ratio: 16/9;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-preview video,
+        .video-preview iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-preview-placeholder {
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .video-preview-placeholder .icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* File input styling */
+        input[type="file"] {
+            display: none;
+        }
+
         /* Checkbox */
         .checkbox-group {
             display: flex;
@@ -582,16 +786,55 @@
                             <textarea class="form-textarea" id="description" placeholder="Detailed project description..."></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Thumbnail URL</label>
-                            <input type="url" class="form-input" id="thumbnail" placeholder="https://...">
-                            <div class="form-hint">Used in project cards</div>
+                        <div class="form-group full-width">
+                            <div class="image-uploader">
+                                <div class="image-uploader-header">
+                                    <h4>📸 Project Images (Screenshots)</h4>
+                                    <div class="thumbnail-selector">
+                                        <span>Thumbnail:</span>
+                                        <select id="thumbnailIndex">
+                                            <option value="0">Image 1 (First)</option>
+                                            <option value="1">Image 2</option>
+                                            <option value="2">Image 3</option>
+                                            <option value="3">Image 4</option>
+                                            <option value="4">Image 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="image-preview-grid" id="imagePreviewGrid">
+                                    <!-- Images will be shown here -->
+                                </div>
+                                <div class="image-add-buttons">
+                                    <label class="image-add-btn">
+                                        📷 Add from URL
+                                        <input type="url" id="imageUrlInput" placeholder="Paste image URL" style="width: 100%; padding: 8px; margin-top: 8px; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--text-bright); font-family: 'Rajdhani', sans-serif;" onchange="addImageFromUrl(this.value); this.value='';">
+                                    </label>
+                                    <label class="image-add-btn" for="imageFileInput">
+                                        📁 Upload Image
+                                    </label>
+                                    <input type="file" id="imageFileInput" accept="image/*" onchange="handleImageUpload(this.files)">
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Images (comma separated URLs)</label>
-                            <input type="text" class="form-input" id="images" placeholder="url1, url2, url3">
-                            <div class="form-hint">Screenshots for gallery</div>
+                        <div class="form-group full-width">
+                            <div class="video-uploader">
+                                <h4>🎬 Gameplay Video</h4>
+                                
+                                <div class="video-option">
+                                    <div class="video-option-header">
+                                        <span>▶️ YouTube/Vimeo Link</span>
+                                    </div>
+                                    <input type="url" class="form-input" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." onchange="updateVideoPreview()">
+                                    <div class="form-hint">Paste YouTube or Vimeo video URL</div>
+                                    <div class="video-preview" id="videoPreview">
+                                        <div class="video-preview-placeholder">
+                                            <div class="icon">▶️</div>
+                                            <div>Video preview will appear here</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -676,6 +919,8 @@
 
     <script>
         let projects = [];
+        let currentImages = [];
+        let currentVideoUrl = '';
 
         // Load projects
         async function loadProjects() {
@@ -706,7 +951,7 @@
                     <td>
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <div class="project-thumb">
-                                <img src="${project.thumbnail}" alt="">
+                                <img src="${project.thumbnail || project.images?.[0] || 'https://via.placeholder.com/80x50/12121a/00ff88?text=No+Image'}" alt="">
                             </div>
                             <div>
                                 <div class="project-title">${project.title}</div>
@@ -736,6 +981,10 @@
         function openModal(projectId = null) {
             document.getElementById('projectModal').classList.add('active');
             document.getElementById('projectForm').reset();
+            currentImages = [];
+            currentVideoUrl = '';
+            renderImagePreview();
+            updateVideoPreview();
             
             if (projectId) {
                 const project = projects.find(p => p.id === projectId);
@@ -754,6 +1003,104 @@
             document.getElementById('projectModal').classList.remove('active');
         }
 
+        // Render image preview grid
+        function renderImagePreview() {
+            const grid = document.getElementById('imagePreviewGrid');
+            const thumbnailIndex = parseInt(document.getElementById('thumbnailIndex').value) || 0;
+            
+            grid.innerHTML = currentImages.map((img, index) => `
+                <div class="image-preview-item ${index === thumbnailIndex ? 'thumbnail' : ''}" onclick="selectThumbnail(${index})">
+                    ${img.startsWith('data:') ? 
+                        `<img src="${img}" alt="Image ${index + 1}">` : 
+                        `<img src="${img}" alt="Image ${index + 1}" onerror="this.parentElement.innerHTML='<div class=\\'placeholder\\'>❌</div>'">`
+                    }
+                    <button class="remove-btn" onclick="event.stopPropagation(); removeImage(${index})">×</button>
+                    ${index === thumbnailIndex ? '<span class="thumbnail-badge">THUMB</span>' : ''}
+                </div>
+            `).join('');
+            
+            // Update thumbnail selector options
+            const selector = document.getElementById('thumbnailIndex');
+            selector.innerHTML = currentImages.map((_, i) => 
+                `<option value="${i}" ${i === thumbnailIndex ? 'selected' : ''}>Image ${i + 1}${i === 0 ? ' (First)' : ''}</option>`
+            ).join('');
+        }
+
+        // Select thumbnail
+        function selectThumbnail(index) {
+            document.getElementById('thumbnailIndex').value = index;
+            renderImagePreview();
+        }
+
+        // Add image from URL
+        function addImageFromUrl(url) {
+            if (url && url.trim()) {
+                currentImages.push(url.trim());
+                renderImagePreview();
+            }
+        }
+
+        // Handle file upload
+        function handleImageUpload(files) {
+            if (files && files.length > 0) {
+                const file = files[0];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    currentImages.push(e.target.result);
+                    renderImagePreview();
+                };
+                reader.readAsDataURL(file);
+            }
+            document.getElementById('imageFileInput').value = '';
+        }
+
+        // Remove image
+        function removeImage(index) {
+            currentImages.splice(index, 1);
+            const thumbnailIndex = parseInt(document.getElementById('thumbnailIndex').value);
+            if (thumbnailIndex >= currentImages.length && thumbnailIndex > 0) {
+                document.getElementById('thumbnailIndex').value = currentImages.length - 1;
+            }
+            renderImagePreview();
+        }
+
+        // Update video preview
+        function updateVideoPreview() {
+            const videoUrl = document.getElementById('videoUrl').value;
+            const preview = document.getElementById('videoPreview');
+            currentVideoUrl = videoUrl;
+            
+            if (!videoUrl) {
+                preview.innerHTML = `
+                    <div class="video-preview-placeholder">
+                        <div class="icon">▶️</div>
+                        <div>Video preview will appear here</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // YouTube
+            if (videoUrl.includes('youtube.com/watch') || videoUrl.includes('youtu.be/')) {
+                let videoId = '';
+                if (videoUrl.includes('youtu.be/')) {
+                    videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+                } else {
+                    videoId = new URL(videoUrl).searchParams.get('v');
+                }
+                preview.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+            }
+            // Vimeo
+            else if (videoUrl.includes('vimeo.com/')) {
+                const vimeoId = videoUrl.split('vimeo.com/')[1].split('?')[0];
+                preview.innerHTML = `<iframe src="https://player.vimeo.com/video/${vimeoId}" frameborder="0" allowfullscreen></iframe>`;
+            }
+            // Direct video file
+            else {
+                preview.innerHTML = `<video src="${videoUrl}" controls></video>`;
+            }
+        }
+
         // Populate form
         function populateForm(project) {
             document.getElementById('projectId').value = project.id;
@@ -763,8 +1110,6 @@
             document.getElementById('description').value = project.description || '';
             document.getElementById('category').value = project.category;
             document.getElementById('status').value = project.status;
-            document.getElementById('thumbnail').value = project.thumbnail || '';
-            document.getElementById('images').value = project.images?.join(', ') || '';
             document.getElementById('technologies').value = project.technologies.join(', ');
             document.getElementById('role').value = project.role || '';
             document.getElementById('duration').value = project.duration || '';
@@ -777,6 +1122,12 @@
             document.getElementById('playStoreUrl').value = project.playStoreUrl || '';
             document.getElementById('features').value = project.features?.join('\n') || '';
             document.getElementById('featured').checked = project.featured;
+            
+            // Load images
+            currentImages = project.images ? [...project.images] : [];
+            currentVideoUrl = project.videoUrl || '';
+            renderImagePreview();
+            updateVideoPreview();
         }
 
         // Edit project
@@ -787,21 +1138,30 @@
         // Save project
         function saveProject() {
             const id = document.getElementById('projectIdInput').value.toLowerCase().replace(/\s+/g, '-');
+            const title = document.getElementById('title').value;
             
             if (!id) {
                 showNotification('Please enter a Project ID', 'error');
                 return;
             }
+            if (!title) {
+                showNotification('Please enter a Project Title', 'error');
+                return;
+            }
+
+            // Get thumbnail based on selected index
+            const thumbnailIndex = parseInt(document.getElementById('thumbnailIndex').value) || 0;
+            const thumbnail = currentImages[thumbnailIndex] || currentImages[0] || '';
 
             const projectData = {
                 id: id,
-                title: document.getElementById('title').value,
+                title: title,
                 shortDescription: document.getElementById('shortDescription').value,
                 description: document.getElementById('description').value,
                 category: document.getElementById('category').value,
                 status: document.getElementById('status').value,
-                thumbnail: document.getElementById('thumbnail').value,
-                images: document.getElementById('images').value.split(',').map(s => s.trim()).filter(s => s),
+                thumbnail: thumbnail,
+                images: currentImages,
                 technologies: document.getElementById('technologies').value.split(',').map(s => s.trim()).filter(s => s),
                 role: document.getElementById('role').value,
                 duration: document.getElementById('duration').value,
@@ -809,7 +1169,7 @@
                 platform: document.getElementById('platform').value,
                 downloads: document.getElementById('downloads').value,
                 year: document.getElementById('year').value,
-                videoUrl: document.getElementById('videoUrl').value,
+                videoUrl: currentVideoUrl,
                 apkUrl: document.getElementById('apkUrl').value,
                 playStoreUrl: document.getElementById('playStoreUrl').value,
                 features: document.getElementById('features').value.split('\n').map(s => s.trim()).filter(s => s),
@@ -826,14 +1186,12 @@
                 showNotification('Project added successfully!', 'success');
             }
 
-            // Save to localStorage (simulated save)
+            // Save to localStorage
             localStorage.setItem('portfolio_projects', JSON.stringify(projects));
             
             renderTable();
             updateStats();
             closeModal();
-
-            // For demo: also show download option
             downloadJson();
         }
 
@@ -857,9 +1215,9 @@
             const a = document.createElement('a');
             a.href = url;
             a.download = 'projects.json';
-            // Auto-trigger download (optional for demo)
-            // a.click();
+            a.click();
             URL.revokeObjectURL(url);
+            showNotification('JSON file downloaded!', 'success');
         }
 
         // Show notification
@@ -891,6 +1249,9 @@
                 closeModal();
             }
         });
+
+        // Thumbnail selector change
+        document.getElementById('thumbnailIndex').addEventListener('change', renderImagePreview);
     </script>
 
 </body>
