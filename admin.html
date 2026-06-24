@@ -31,6 +31,7 @@
             min-height: 100vh;
         }
 
+        /* Admin Header */
         .admin-header {
             background: var(--bg-dark);
             padding: 20px 40px;
@@ -58,7 +59,11 @@
             font-size: 0.8rem;
         }
 
-        .header-actions { display: flex; gap: 15px; align-items: center; }
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
 
         .btn {
             font-family: 'Orbitron', sans-serif;
@@ -77,17 +82,52 @@
             gap: 8px;
         }
 
-        .btn-primary { background: var(--accent-primary); color: var(--bg-deep); }
-        .btn-primary:hover { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); transform: translateY(-2px); }
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-deep);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+            transform: translateY(-2px);
+        }
 
-        .btn-secondary { background: transparent; color: var(--text-bright); border: 1px solid var(--text-muted); }
-        .btn-secondary:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-bright);
+            border: 1px solid var(--text-muted);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
 
-        .btn-purple { background: var(--accent-secondary); color: var(--text-bright); border: none; }
-        .btn-purple:hover { box-shadow: 0 0 20px rgba(123, 47, 255, 0.4); transform: translateY(-2px); }
+        .btn-danger {
+            background: transparent;
+            color: var(--accent-tertiary);
+            border: 1px solid var(--accent-tertiary);
+        }
+        .btn-danger:hover {
+            background: var(--accent-tertiary);
+            color: var(--bg-deep);
+        }
 
-        .admin-container { max-width: 1400px; margin: 0 auto; padding: 40px; }
+        .btn-purple {
+            background: var(--accent-secondary);
+            color: var(--text-bright);
+            border: none;
+        }
+        .btn-purple:hover {
+            box-shadow: 0 0 20px rgba(123, 47, 255, 0.4);
+        }
 
+        /* Admin Container */
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Stats Cards */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -102,12 +142,34 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .stat-card .label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
-        .stat-card .value { font-family: 'Orbitron', sans-serif; font-size: 2rem; font-weight: 700; color: var(--accent-primary); }
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
 
-        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-        .section-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--text-bright); }
+        .stat-card .value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
 
+        /* Section Header */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-bright);
+        }
+
+        /* Projects Table */
         .projects-table-container {
             background: var(--bg-card);
             border-radius: 12px;
@@ -115,8 +177,18 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .projects-table { width: 100%; border-collapse: collapse; }
-        .projects-table th, .projects-table td { padding: 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .projects-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .projects-table th,
+        .projects-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
         .projects-table th {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.75rem;
@@ -126,12 +198,37 @@
             letter-spacing: 2px;
             background: var(--bg-dark);
         }
-        .projects-table tr:hover td { background: var(--bg-card-hover); }
 
-        .project-thumb { width: 80px; height: 50px; background: var(--bg-dark); border-radius: 6px; overflow: hidden; }
-        .project-thumb img { width: 100%; height: 100%; object-fit: cover; }
-        .project-title { font-family: 'Orbitron', sans-serif; font-size: 1rem; color: var(--text-bright); margin-bottom: 5px; }
-        .project-category { font-size: 0.85rem; color: var(--text-muted); text-transform: capitalize; }
+        .projects-table tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        .project-thumb {
+            width: 80px;
+            height: 50px;
+            background: var(--bg-dark);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .project-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: var(--text-bright);
+            margin-bottom: 5px;
+        }
+
+        .project-category {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: capitalize;
+        }
 
         .status-badge {
             display: inline-block;
@@ -143,14 +240,31 @@
             padding: 4px 12px;
             border-radius: 4px;
         }
+
         .status-shipped { background: rgba(0, 255, 136, 0.15); color: var(--accent-primary); }
         .status-released { background: rgba(123, 47, 255, 0.15); color: var(--accent-secondary); }
         .status-production { background: rgba(255, 170, 0, 0.15); color: var(--accent-warning); }
         .status-development { background: rgba(255, 45, 106, 0.15); color: var(--accent-tertiary); }
 
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-        .tech-tag { font-size: 0.7rem; padding: 3px 8px; background: rgba(123, 47, 255, 0.15); color: var(--accent-secondary); border-radius: 3px; }
-        .action-btns { display: flex; gap: 10px; }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tech-tag {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            background: rgba(123, 47, 255, 0.15);
+            color: var(--accent-secondary);
+            border-radius: 3px;
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 10px;
+        }
+
         .action-btn {
             width: 35px;
             height: 35px;
@@ -163,115 +277,199 @@
             border: none;
             font-size: 1rem;
         }
-        .action-btn.edit { background: rgba(0, 255, 136, 0.15); color: var(--accent-primary); }
-        .action-btn.edit:hover { background: var(--accent-primary); color: var(--bg-deep); }
-        .action-btn.delete { background: rgba(255, 45, 106, 0.15); color: var(--accent-tertiary); }
-        .action-btn.delete:hover { background: var(--accent-tertiary); color: var(--bg-deep); }
+
+        .action-btn.edit {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--accent-primary);
+        }
+        .action-btn.edit:hover {
+            background: var(--accent-primary);
+            color: var(--bg-deep);
+        }
+
+        .action-btn.delete {
+            background: rgba(255, 45, 106, 0.15);
+            color: var(--accent-tertiary);
+        }
+        .action-btn.delete:hover {
+            background: var(--accent-tertiary);
+            color: var(--bg-deep);
+        }
 
         /* Modal */
         .modal-overlay {
+            display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: none;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
             align-items: center;
             justify-content: center;
-            z-index: 2000;
             padding: 20px;
         }
-        .modal-overlay.active { display: flex; }
+
+        .modal-overlay.active {
+            display: flex;
+        }
 
         .modal {
             background: var(--bg-card);
             border-radius: 16px;
             width: 100%;
-            max-width: 1000px;
-            max-height: 95vh;
+            max-width: 900px;
+            max-height: 90vh;
             overflow-y: auto;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
         .modal-header {
-            background: var(--bg-dark);
-            padding: 20px 30px;
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 10;
         }
-        .modal-header h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; color: var(--text-bright); }
-        .modal-close {
-            width: 35px; height: 35px;
-            display: flex; align-items: center; justify-content: center;
-            background: var(--bg-card); border: none; border-radius: 6px;
-            cursor: pointer; color: var(--text-body); font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        .modal-close:hover { background: var(--accent-tertiary); color: var(--bg-deep); }
-        .modal-body { padding: 30px; }
 
-        .form-section {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .form-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-        .form-section-title {
+        .modal-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            color: var(--accent-primary);
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--text-bright);
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        .form-section-title::before {
-            content: '';
-            width: 3px;
-            height: 15px;
-            background: var(--accent-primary);
-            border-radius: 2px;
+            justify-content: center;
+            background: var(--bg-dark);
+            border: none;
+            border-radius: 8px;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s;
         }
 
-        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group.full-width { grid-column: span 2; }
+        .modal-close:hover {
+            background: var(--accent-tertiary);
+            color: var(--bg-deep);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        /* Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
         .form-label {
             display: block;
-            font-size: 0.85rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
             color: var(--text-muted);
-            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
-        .form-input, .form-select, .form-textarea {
+        .form-input,
+        .form-textarea,
+        .form-select {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px 16px;
             background: var(--bg-dark);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 8px;
             color: var(--text-bright);
             font-family: 'Rajdhani', sans-serif;
             font-size: 1rem;
-            transition: all 0.3s;
+            transition: border-color 0.3s;
         }
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
             outline: none;
             border-color: var(--accent-primary);
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
         }
-        .form-textarea { min-height: 100px; resize: vertical; }
-        .form-select { cursor: pointer; }
-        .form-checkbox { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-        .form-checkbox input { width: 18px; height: 18px; accent-color: var(--accent-primary); }
 
-        /* PlayStore Fetch Section */
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group input {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent-primary);
+        }
+
+        /* Modal Footer */
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            z-index: 2000;
+            transform: translateX(120%);
+            transition: transform 0.3s;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: var(--accent-primary);
+            color: var(--bg-deep);
+        }
+
+        .notification.error {
+            background: var(--accent-tertiary);
+            color: var(--bg-deep);
+        }
+
+        /* PlayStore Fetch */
         .fetch-section {
             background: rgba(123, 47, 255, 0.1);
             border: 1px dashed var(--accent-secondary);
@@ -284,33 +482,21 @@
             font-size: 0.95rem;
             color: var(--accent-secondary);
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
-        .fetch-input-group { display: flex; gap: 15px; }
-        .fetch-input-group input { flex: 1; }
-        .fetch-btn {
-            background: var(--accent-secondary);
-            color: var(--text-bright);
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
+        .fetch-input-group {
+            display: flex;
+            gap: 15px;
+        }
+        .fetch-input-group input {
+            flex: 1;
+        }
+        .fetch-note {
             font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
+            color: var(--text-muted);
+            margin-top: 10px;
         }
-        .fetch-btn:hover { box-shadow: 0 0 20px rgba(123, 47, 255, 0.4); }
-        .fetch-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-        .fetch-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; }
 
-        /* Image Upload Section */
+        /* Image Upload */
         .upload-section {
             background: rgba(0, 255, 136, 0.05);
             border: 1px dashed var(--accent-primary);
@@ -323,9 +509,6 @@
             font-size: 0.95rem;
             color: var(--accent-primary);
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         .upload-dropzone {
             border: 2px dashed var(--accent-primary);
@@ -338,14 +521,27 @@
         }
         .upload-dropzone:hover, .upload-dropzone.dragover {
             background: rgba(0, 255, 136, 0.1);
-            border-color: var(--accent-primary);
         }
-        .upload-dropzone input { display: none; }
-        .upload-icon { font-size: 3rem; margin-bottom: 15px; }
-        .upload-text { color: var(--text-muted); font-size: 0.95rem; }
-        .upload-text strong { color: var(--accent-primary); }
-        .upload-formats { font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; }
-
+        .upload-dropzone input {
+            display: none;
+        }
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--accent-primary);
+        }
+        .upload-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .upload-text strong {
+            color: var(--accent-primary);
+        }
+        .upload-formats {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
         .uploaded-images {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -361,13 +557,24 @@
             border: 2px solid transparent;
             transition: all 0.3s;
         }
-        .uploaded-image-item:hover { border-color: var(--accent-primary); }
-        .uploaded-image-item.thumbnail-selected { border-color: var(--accent-primary); box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
-        .uploaded-image-item img { width: 100%; height: 100%; object-fit: cover; }
+        .uploaded-image-item:hover {
+            border-color: var(--accent-primary);
+        }
+        .uploaded-image-item.thumb-selected {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+        .uploaded-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .uploaded-image-item .remove-btn {
             position: absolute;
-            top: 5px; right: 5px;
-            width: 25px; height: 25px;
+            top: 5px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
             background: var(--accent-tertiary);
             border: none;
             border-radius: 50%;
@@ -380,10 +587,14 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-        .uploaded-image-item:hover .remove-btn { opacity: 1; }
+        .uploaded-image-item:hover .remove-btn {
+            opacity: 1;
+        }
         .uploaded-image-item .set-thumb-btn {
             position: absolute;
-            bottom: 5px; left: 5px; right: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
             background: rgba(0, 0, 0, 0.8);
             border: none;
             border-radius: 4px;
@@ -395,79 +606,70 @@
             transition: opacity 0.3s;
             font-family: 'Orbitron', sans-serif;
         }
-        .uploaded-image-item:hover .set-thumb-btn { opacity: 1; }
-        .uploaded-image-item .set-thumb-btn.set { background: var(--accent-primary); color: var(--bg-deep); }
-
-        .download-images-btn {
-            margin-top: 15px;
-            background: var(--bg-dark);
-            border: 1px solid var(--accent-primary);
-            color: var(--accent-primary);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.3s;
+        .uploaded-image-item:hover .set-thumb-btn {
+            opacity: 1;
         }
-        .download-images-btn:hover { background: var(--accent-primary); color: var(--bg-deep); }
+        .uploaded-image-item .set-thumb-btn.set {
+            background: var(--accent-primary);
+            color: var(--bg-deep);
+        }
 
-        .modal-actions {
+        /* Image Preview */
+        .image-preview-grid {
             display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            padding: 20px 30px;
-            background: var(--bg-dark);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            position: sticky;
-            bottom: 0;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .image-preview-item {
+            width: 80px;
+            height: 50px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        .image-preview-item.thumbnail {
+            border-color: var(--accent-primary);
+        }
+        .image-preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .notification {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transform: translateX(200%);
-            transition: transform 0.3s;
-            z-index: 3000;
-        }
-        .notification.show { transform: translateX(0); }
-        .notification.success { background: var(--accent-primary); color: var(--bg-deep); }
-        .notification.error { background: var(--accent-tertiary); color: var(--bg-deep); }
-        .notification.loading { background: var(--accent-secondary); color: var(--text-bright); }
-
-        .image-preview-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-        .image-preview-item { width: 80px; height: 50px; border-radius: 6px; overflow: hidden; border: 2px solid transparent; }
-        .image-preview-item.thumbnail { border-color: var(--accent-primary); }
-        .image-preview-item img { width: 100%; height: 100%; object-fit: cover; }
-
+        /* Mobile */
         @media (max-width: 768px) {
-            .admin-header { flex-direction: column; gap: 15px; padding: 15px 20px; }
-            .admin-container { padding: 20px; }
-            .form-grid { grid-template-columns: 1fr; }
-            .form-group.full-width { grid-column: span 1; }
-            .projects-table-container { overflow-x: auto; }
-            .modal { max-width: 100%; }
-            .fetch-input-group { flex-direction: column; }
-            .uploaded-images { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+            .admin-header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .admin-container {
+                padding: 20px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .projects-table {
+                display: block;
+                overflow-x: auto;
+            }
         }
     </style>
 </head>
 <body>
+
     <header class="admin-header">
-        <div class="admin-logo">SHEHRAZ<span>ADMIN</span></div>
+        <div class="admin-logo">
+            SHEHRAZ.DEV <span>ADMIN</span>
+        </div>
         <div class="header-actions">
             <a href="index.html" class="btn btn-secondary" target="_blank">View Site</a>
             <button class="btn btn-primary" onclick="openModal()">+ Add Project</button>
         </div>
     </header>
 
-    <main class="admin-container">
+    <div class="admin-container">
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="label">Total Projects</div>
@@ -475,21 +677,21 @@
             </div>
             <div class="stat-card">
                 <div class="label">Featured</div>
-                <div class="value" id="featuredCount">0</div>
+                <div class="value" id="featuredProjects">0</div>
             </div>
             <div class="stat-card">
-                <div class="label">Mobile Games</div>
-                <div class="value" id="mobileCount">0</div>
+                <div class="label">Shipped</div>
+                <div class="value" id="shippedProjects">0</div>
             </div>
             <div class="stat-card">
-                <div class="label">Tools & Frameworks</div>
-                <div class="value" id="toolsCount">0</div>
+                <div class="label">In Progress</div>
+                <div class="value" id="progressProjects">0</div>
             </div>
         </div>
 
         <div class="section-header">
-            <h2 class="section-title">Projects</h2>
-            <button class="btn btn-secondary" onclick="downloadJson()">📥 Export JSON</button>
+            <h2 class="section-title">All Projects</h2>
+            <button class="btn btn-secondary" onclick="downloadJson()">Export JSON</button>
         </div>
 
         <div class="projects-table-container">
@@ -503,178 +705,179 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="projectsTableBody"></tbody>
+                <tbody id="projectsTableBody">
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 40px;">Loading...</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
-    </main>
+    </div>
 
-    <!-- Modal -->
+    <!-- Add/Edit Modal -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal">
             <div class="modal-header">
-                <h2 id="modalTitle">Add New Project</h2>
-                <button class="modal-close" onclick="closeModal()">✕</button>
+                <h3 class="modal-title" id="modalTitle">Add New Project</h3>
+                <button class="modal-close" onclick="closeModal()">×</button>
             </div>
             <div class="modal-body">
                 <form id="projectForm">
                     <input type="hidden" id="projectId">
-
-                    <!-- PlayStore Auto-Fetch Section -->
+                    
+                    <!-- PlayStore Auto-Fetch -->
                     <div class="fetch-section">
-                        <h3>🤖 Auto-Fetch from Play Store</h3>
+                        <h3>Auto-Fetch from Play Store</h3>
                         <div class="fetch-input-group">
                             <input type="url" id="playStoreUrlInput" class="form-input" placeholder="https://play.google.com/store/apps/details?id=com.example.game">
-                            <button type="button" class="fetch-btn" onclick="fetchFromPlayStore()">
-                                <span class="btn-text">Fetch Data</span>
-                                <span class="btn-loading" style="display:none;">Loading...</span>
-                            </button>
+                            <button type="button" class="fetch-btn" onclick="fetchFromPlayStore()">Fetch Data</button>
                         </div>
-                        <p class="fetch-note">📌 Paste a Play Store URL to automatically fill title, description, icon, and screenshots.</p>
+                        <p class="fetch-note">Paste Play Store URL to auto-fill title, description, icon, screenshots</p>
                     </div>
 
-                    <!-- Manual Image Upload Section -->
+                    <!-- Image Upload -->
                     <div class="upload-section">
-                        <h3>📤 Upload Images</h3>
+                        <h3>Upload Images (stored in browser)</h3>
                         <div class="upload-dropzone" id="dropzone">
                             <input type="file" id="imageUpload" accept="image/*" multiple>
-                            <div class="upload-icon">🖼️</div>
-                            <div class="upload-text">
-                                <strong>Click to upload</strong> or drag and drop<br>
-                                PNG, JPG, GIF up to 5MB
-                            </div>
-                            <div class="upload-formats">Multiple files allowed</div>
+                            <div class="upload-icon">[ IMG ]</div>
+                            <div class="upload-text"><strong>Click to upload</strong> or drag images</div>
+                            <div class="upload-formats">PNG, JPG, GIF up to 5MB</div>
                         </div>
                         <div class="uploaded-images" id="uploadedImages"></div>
-                        <button type="button" class="download-images-btn" id="downloadImagesBtn" style="display:none;" onclick="downloadUploadedImages()">
-                            📥 Download Images Guide (for GitHub)
-                        </button>
                     </div>
 
-                    <!-- Basic Info -->
-                    <div class="form-section">
-                        <h3 class="form-section-title">Basic Information</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Project ID</label>
-                                <input type="text" id="projectIdInput" class="form-input" placeholder="my-game-project">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Title</label>
-                                <input type="text" id="title" class="form-input" placeholder="My Awesome Game">
-                            </div>
-                            <div class="form-group full-width">
-                                <label class="form-label">Short Description</label>
-                                <input type="text" id="shortDescription" class="form-input" placeholder="A brief description of your project">
-                            </div>
-                            <div class="form-group full-width">
-                                <label class="form-label">Full Description</label>
-                                <textarea id="description" class="form-textarea" placeholder="Detailed description..."></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Category</label>
-                                <select id="category" class="form-select">
-                                    <option value="mobile">Mobile Games</option>
-                                    <option value="tools">Tools & Framework</option>
-                                    <option value="web">Web Games</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Status</label>
-                                <select id="status" class="form-select">
-                                    <option value="development">Development</option>
-                                    <option value="production">Production</option>
-                                    <option value="released">Released</option>
-                                    <option value="shipped">Shipped</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Featured</label>
-                                <label class="form-checkbox">
-                                    <input type="checkbox" id="featured">
-                                    Show on homepage
-                                </label>
-                            </div>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label class="form-label">Project Title *</label>
+                            <input type="text" class="form-input" id="title" required placeholder="e.g., Hyper-Casual Game Collection">
                         </div>
-                    </div>
 
-                    <!-- Media -->
-                    <div class="form-section">
-                        <h3 class="form-section-title">Media URLs</h3>
-                        <div class="form-grid">
-                            <div class="form-group full-width">
-                                <label class="form-label">Thumbnail URL</label>
-                                <input type="text" id="thumbnail" class="form-input" placeholder="https://.../thumbnail.jpg">
-                            </div>
-                            <div class="form-group full-width">
-                                <label class="form-label">Images URLs (comma separated)</label>
-                                <textarea id="images" class="form-textarea" placeholder="https://.../img1.jpg, https://.../img2.jpg"></textarea>
-                                <div class="image-preview-grid" id="imagePreview"></div>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Video URL</label>
-                                <input type="text" id="videoUrl" class="form-input" placeholder="YouTube embed URL">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">APK URL</label>
-                                <input type="text" id="apkUrl" class="form-input" placeholder="Direct APK download link">
-                            </div>
+                        <div class="form-group full-width">
+                            <label class="form-label">Short Description *</label>
+                            <input type="text" class="form-input" id="shortDescription" required placeholder="Brief description for cards">
                         </div>
-                    </div>
 
-                    <!-- Project Details -->
-                    <div class="form-section">
-                        <h3 class="form-section-title">Project Details</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Role</label>
-                                <input type="text" id="role" class="form-input" placeholder="Lead Developer">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Duration</label>
-                                <input type="text" id="duration" class="form-input" placeholder="3 months">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Team Size</label>
-                                <input type="number" id="teamSize" class="form-input" value="1" min="1">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Platform</label>
-                                <input type="text" id="platform" class="form-input" placeholder="Android">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Downloads</label>
-                                <input type="text" id="downloads" class="form-input" placeholder="100K+">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Year</label>
-                                <input type="text" id="year" class="form-input" placeholder="2024">
-                            </div>
-                            <div class="form-group full-width">
-                                <label class="form-label">Technologies (comma separated)</label>
-                                <input type="text" id="technologies" class="form-input" placeholder="Unity 3D, C#, Firebase">
-                            </div>
-                            <div class="form-group full-width">
-                                <label class="form-label">Key Features (one per line)</label>
-                                <textarea id="features" class="form-textarea" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
+                        <div class="form-group">
+                            <label class="form-label">Category</label>
+                            <select class="form-select" id="category">
+                                <option value="mobile">Mobile Games</option>
+                                <option value="tools">Tools & Framework</option>
+                                <option value="web">Web Games</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="status">
+                                <option value="shipped">Shipped</option>
+                                <option value="released">Released</option>
+                                <option value="production">In Production</option>
+                                <option value="development">In Development</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Full Description</label>
+                            <textarea class="form-textarea" id="description" placeholder="Detailed project description..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Thumbnail URL</label>
+                            <input type="url" class="form-input" id="thumbnail" placeholder="https://...">
+                            <div class="image-preview-grid" id="thumbPreview"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Images URLs</label>
+                            <textarea class="form-textarea" id="images" rows="2" placeholder="https://.../img1.jpg&#10;https://.../img2.jpg"></textarea>
+                            <div class="image-preview-grid" id="imagePreview"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Role</label>
+                            <input type="text" class="form-input" id="role" placeholder="Lead Developer">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Duration</label>
+                            <input type="text" class="form-input" id="duration" placeholder="3 months">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Team Size</label>
+                            <input type="number" class="form-input" id="teamSize" min="1" value="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Platform</label>
+                            <input type="text" class="form-input" id="platform" placeholder="Android, iOS">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Downloads</label>
+                            <input type="text" class="form-input" id="downloads" placeholder="10K+">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Year</label>
+                            <input type="text" class="form-input" id="year" placeholder="2024">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Technologies (comma separated)</label>
+                            <input type="text" class="form-input" id="technologies" placeholder="Unity 3D, C#, AdMob">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Video URL</label>
+                            <input type="url" class="form-input" id="videoUrl" placeholder="YouTube or video link">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">APK URL</label>
+                            <input type="url" class="form-input" id="apkUrl" placeholder="Direct APK download link">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Play Store URL</label>
+                            <input type="url" class="form-input" id="playStoreUrl" placeholder="Google Play Store link">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Key Features (one per line)</label>
+                            <textarea class="form-textarea" id="features" style="min-height: 150px;" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Project ID (for URL)</label>
+                            <input type="text" class="form-input" id="projectIdInput" placeholder="my-project-name">
+                            <div class="form-hint">Use lowercase, hyphens instead of spaces</div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="featured" checked>
+                                <label for="featured">Featured on homepage</label>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="modal-actions">
+            <div class="modal-footer">
                 <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="saveProject()">💾 Save Project</button>
+                <button class="btn btn-primary" onclick="saveProject()">Save Project</button>
             </div>
         </div>
     </div>
 
+    <!-- Notification -->
     <div class="notification" id="notification"></div>
 
     <script>
         let projects = [];
-        let uploadedImages = [];
-        let selectedThumbnailIndex = 0;
 
+        // Load projects
         async function loadProjects() {
             try {
                 const response = await fetch('data/projects.json');
@@ -683,17 +886,19 @@
                 renderTable();
                 updateStats();
             } catch (error) {
-                console.error('Error loading projects:', error);
+                showNotification('Error loading projects', 'error');
             }
         }
 
+        // Update stats
         function updateStats() {
             document.getElementById('totalProjects').textContent = projects.length;
-            document.getElementById('featuredCount').textContent = projects.filter(p => p.featured).length;
-            document.getElementById('mobileCount').textContent = projects.filter(p => p.category === 'mobile').length;
-            document.getElementById('toolsCount').textContent = projects.filter(p => p.category === 'tools').length;
+            document.getElementById('featuredProjects').textContent = projects.filter(p => p.featured).length;
+            document.getElementById('shippedProjects').textContent = projects.filter(p => p.status === 'shipped' || p.status === 'released').length;
+            document.getElementById('progressProjects').textContent = projects.filter(p => p.status === 'production' || p.status === 'development').length;
         }
 
+        // Render table
         function renderTable() {
             const tbody = document.getElementById('projectsTableBody');
             tbody.innerHTML = projects.map(project => `
@@ -701,7 +906,7 @@
                     <td>
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <div class="project-thumb">
-                                <img src="${project.thumbnail}" alt="${project.title}" onerror="this.style.display='none'">
+                                <img src="${project.thumbnail}" alt="">
                             </div>
                             <div>
                                 <div class="project-title">${project.title}</div>
@@ -727,12 +932,10 @@
             `).join('');
         }
 
+        // Open modal
         function openModal(projectId = null) {
             document.getElementById('projectModal').classList.add('active');
             document.getElementById('projectForm').reset();
-            uploadedImages = [];
-            selectedThumbnailIndex = 0;
-            renderUploadedImages();
             
             if (projectId) {
                 const project = projects.find(p => p.id === projectId);
@@ -746,21 +949,23 @@
             }
         }
 
+        // Close modal
         function closeModal() {
             document.getElementById('projectModal').classList.remove('active');
         }
 
+        // Populate form
         function populateForm(project) {
             document.getElementById('projectId').value = project.id;
             document.getElementById('projectIdInput').value = project.id;
-            document.getElementById('title').value = project.title || '';
-            document.getElementById('shortDescription').value = project.shortDescription || '';
+            document.getElementById('title').value = project.title;
+            document.getElementById('shortDescription').value = project.shortDescription;
             document.getElementById('description').value = project.description || '';
-            document.getElementById('category').value = project.category || 'mobile';
-            document.getElementById('status').value = project.status || 'development';
+            document.getElementById('category').value = project.category;
+            document.getElementById('status').value = project.status;
             document.getElementById('thumbnail').value = project.thumbnail || '';
-            document.getElementById('images').value = (project.images || []).join(', ');
-            document.getElementById('technologies').value = (project.technologies || []).join(', ');
+            document.getElementById('images').value = project.images?.join(', ') || '';
+            document.getElementById('technologies').value = project.technologies.join(', ');
             document.getElementById('role').value = project.role || '';
             document.getElementById('duration').value = project.duration || '';
             document.getElementById('teamSize').value = project.teamSize || 1;
@@ -769,30 +974,25 @@
             document.getElementById('year').value = project.year || '';
             document.getElementById('videoUrl').value = project.videoUrl || '';
             document.getElementById('apkUrl').value = project.apkUrl || '';
-            document.getElementById('features').value = (project.features || []).join('\n');
-            document.getElementById('featured').checked = project.featured || false;
-            updateImagePreview();
+            document.getElementById('playStoreUrl').value = project.playStoreUrl || '';
+            document.getElementById('features').value = project.features?.join('\n') || '';
+            document.getElementById('featured').checked = project.featured;
         }
 
+        // Edit project
         function editProject(id) {
             openModal(id);
         }
 
+        // Save project
         function saveProject() {
-            const id = document.getElementById('projectIdInput').value.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            const id = document.getElementById('projectIdInput').value.toLowerCase().replace(/\s+/g, '-');
             
             if (!id) {
                 showNotification('Please enter a Project ID', 'error');
                 return;
             }
 
-            if (!document.getElementById('title').value) {
-                showNotification('Please enter a project title', 'error');
-                return;
-            }
-
-            const imageUrls = uploadedImages.map(img => img.dataUrl);
-            
             const projectData = {
                 id: id,
                 title: document.getElementById('title').value,
@@ -800,10 +1000,8 @@
                 description: document.getElementById('description').value,
                 category: document.getElementById('category').value,
                 status: document.getElementById('status').value,
-                thumbnail: document.getElementById('thumbnail').value || (uploadedImages.length > 0 ? uploadedImages[selectedThumbnailIndex].dataUrl : ''),
-                images: document.getElementById('images').value ? 
-                    document.getElementById('images').value.split(',').map(s => s.trim()).filter(s => s) : 
-                    imageUrls,
+                thumbnail: document.getElementById('thumbnail').value,
+                images: document.getElementById('images').value.split(',').map(s => s.trim()).filter(s => s),
                 technologies: document.getElementById('technologies').value.split(',').map(s => s.trim()).filter(s => s),
                 role: document.getElementById('role').value,
                 duration: document.getElementById('duration').value,
@@ -813,10 +1011,12 @@
                 year: document.getElementById('year').value,
                 videoUrl: document.getElementById('videoUrl').value,
                 apkUrl: document.getElementById('apkUrl').value,
+                playStoreUrl: document.getElementById('playStoreUrl').value,
                 features: document.getElementById('features').value.split('\n').map(s => s.trim()).filter(s => s),
                 featured: document.getElementById('featured').checked
             };
 
+            // Check for duplicate ID
             const existingIndex = projects.findIndex(p => p.id === id);
             if (existingIndex >= 0) {
                 projects[existingIndex] = projectData;
@@ -826,22 +1026,30 @@
                 showNotification('Project added successfully!', 'success');
             }
 
+            // Save to localStorage (simulated save)
             localStorage.setItem('portfolio_projects', JSON.stringify(projects));
+            
             renderTable();
             updateStats();
             closeModal();
+
+            // For demo: also show download option
+            downloadJson();
         }
 
+        // Delete project
         function deleteProject(id) {
-            if (confirm(`Delete "${projects.find(p => p.id === id)?.title}"?`)) {
+            if (confirm(`Are you sure you want to delete "${projects.find(p => p.id === id)?.title}"?`)) {
                 projects = projects.filter(p => p.id !== id);
                 localStorage.setItem('portfolio_projects', JSON.stringify(projects));
                 renderTable();
                 updateStats();
                 showNotification('Project deleted', 'success');
+                downloadJson();
             }
         }
 
+        // Download JSON
         function downloadJson() {
             const data = { projects: projects };
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -854,45 +1062,47 @@
             showNotification('projects.json downloaded!', 'success');
         }
 
+        // Show notification
         function showNotification(message, type) {
             const notification = document.getElementById('notification');
             notification.textContent = message;
             notification.className = `notification ${type} show`;
-            setTimeout(() => notification.classList.remove('show'), 3000);
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
         }
 
-        // Image Upload
+        // Image Upload Variables
+        let uploadedImages = [];
+        let selectedThumbIndex = 0;
+
+        // Image Upload Handlers
         const dropzone = document.getElementById('dropzone');
         const fileInput = document.getElementById('imageUpload');
-
-        dropzone.addEventListener('click', () => fileInput.click());
-        dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
-        dropzone.addEventListener('dragleave', () => { dropzone.classList.remove('dragover'); });
-        dropzone.addEventListener('drop', (e) => { e.preventDefault(); dropzone.classList.remove('dragover'); handleFiles(e.dataTransfer.files); });
-        fileInput.addEventListener('change', (e) => { handleFiles(e.target.files); });
+        
+        if (dropzone) {
+            dropzone.addEventListener('click', () => fileInput.click());
+            dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
+            dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+            dropzone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropzone.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+        }
+        if (fileInput) {
+            fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+        }
 
         function handleFiles(files) {
-            const maxSize = 5 * 1024 * 1024;
-            const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-
             Array.from(files).forEach(file => {
-                if (!validTypes.includes(file.type)) {
-                    showNotification(`${file.name} is not valid`, 'error');
+                if (file.size > 5 * 1024 * 1024) {
+                    showNotification(file.name + ' too large (max 5MB)', 'error');
                     return;
                 }
-                if (file.size > maxSize) {
-                    showNotification(`${file.name} is too large`, 'error');
-                    return;
-                }
-
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    uploadedImages.push({
-                        name: file.name,
-                        dataUrl: e.target.result,
-                        isThumbnail: uploadedImages.length === 0
-                    });
-                    if (uploadedImages.length === 1) selectedThumbnailIndex = 0;
+                    uploadedImages.push({ name: file.name, data: e.target.result });
                     renderUploadedImages();
                 };
                 reader.readAsDataURL(file);
@@ -901,126 +1111,33 @@
 
         function renderUploadedImages() {
             const container = document.getElementById('uploadedImages');
-            const downloadBtn = document.getElementById('downloadImagesBtn');
-            
+            if (!container) return;
             if (uploadedImages.length === 0) {
                 container.innerHTML = '';
-                downloadBtn.style.display = 'none';
                 return;
             }
-
-            downloadBtn.style.display = 'block';
-            container.innerHTML = uploadedImages.map((img, index) => `
-                <div class="uploaded-image-item ${index === selectedThumbnailIndex ? 'thumbnail-selected' : ''}">
-                    <img src="${img.dataUrl}" alt="${img.name}">
-                    <button class="remove-btn" onclick="removeImage(${index})">✕</button>
-                    <button class="set-thumb-btn ${index === selectedThumbnailIndex ? 'set' : ''}" onclick="setThumbnail(${index})">
-                        ${index === selectedThumbnailIndex ? '✓ Thumbnail' : 'Set as Thumbnail'}
+            container.innerHTML = uploadedImages.map((img, i) => `
+                <div class="uploaded-image-item ${i === selectedThumbIndex ? 'thumb-selected' : ''}">
+                    <img src="${img.data}" alt="${img.name}">
+                    <button class="remove-btn" onclick="removeImg(${i})">X</button>
+                    <button class="set-thumb-btn ${i === selectedThumbIndex ? 'set' : ''}" onclick="setThumb(${i})">
+                        ${i === selectedThumbIndex ? 'Thumb' : 'Set'}
                     </button>
                 </div>
             `).join('');
         }
 
-        function removeImage(index) {
-            uploadedImages.splice(index, 1);
-            if (selectedThumbnailIndex >= uploadedImages.length) {
-                selectedThumbnailIndex = Math.max(0, uploadedImages.length - 1);
+        function removeImg(i) {
+            uploadedImages.splice(i, 1);
+            if (selectedThumbIndex >= uploadedImages.length) {
+                selectedThumbIndex = Math.max(0, uploadedImages.length - 1);
             }
             renderUploadedImages();
         }
 
-        function setThumbnail(index) {
-            selectedThumbnailIndex = index;
+        function setThumb(i) {
+            selectedThumbIndex = i;
             renderUploadedImages();
-        }
-
-        function downloadUploadedImages() {
-            if (uploadedImages.length === 0) return;
-
-            let html = `<!DOCTYPE html>
-<html>
-<head>
-    <title>Project Images - GitHub Upload Guide</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background: #1a1a1a; color: white; }
-        h1 { color: #00ff88; }
-        .step { background: #2a2a2a; padding: 20px; margin: 20px 0; border-radius: 8px; }
-        .step h2 { color: #7b2fff; margin-bottom: 10px; }
-        code { background: #333; padding: 2px 6px; border-radius: 3px; }
-        .images-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-        .image-card { background: #2a2a2a; padding: 10px; border-radius: 8px; }
-        .image-card img { width: 100%; border-radius: 4px; }
-        .image-card p { margin: 10px 0 0; font-size: 14px; color: #888; }
-        .thumbnail-badge { background: #00ff88; color: #000; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
-        textarea { width: 100%; height: 200px; background: #2a2a2a; color: #00ff88; padding: 15px; border: none; border-radius: 8px; font-family: monospace; margin-top: 10px; }
-    </style>
-</head>
-<body>
-    <h1>📸 Project Images Guide</h1>
-    
-    <div class="step">
-        <h2>📋 Steps to Upload to GitHub:</h2>
-        <ol style="line-height: 2;">
-            <li>Go to your GitHub repository</li>
-            <li>Click "Add file" → "Create new file" or "Upload files"</li>
-            <li>Create a folder named <code>images</code></li>
-            <li>Upload your images there</li>
-            <li>Copy the URLs from below and paste them in admin panel</li>
-        </ol>
-    </div>
-
-    <div class="step">
-        <h2>🎯 Thumbnail (First Image)</h2>
-        <p><strong>File:</strong> ${uploadedImages[selectedThumbnailIndex]?.name || 'None'}</p>
-    </div>
-
-    <h2>🖼️ All Images (${uploadedImages.length})</h2>
-    <div class="images-container">
-`;
-
-            uploadedImages.forEach((img, index) => {
-                html += `
-        <div class="image-card">
-            ${index === selectedThumbnailIndex ? '<span class="thumbnail-badge">THUMBNAIL</span>' : ''}
-            <img src="${img.dataUrl}" alt="${img.name}">
-            <p>${img.name}</p>
-        </div>
-`;
-            });
-
-            html += `
-    </div>
-
-    <div class="step">
-        <h2>📝 URLs for projects.json</h2>
-        <p><strong>Thumbnail URL:</strong></p>
-        <textarea id="thumbUrl">${uploadedImages[selectedThumbnailIndex]?.dataUrl || ''}</textarea>
-        
-        <p><strong>Images Array:</strong></p>
-        <textarea id="imagesUrl">${uploadedImages.map(img => `    "${img.dataUrl}"`).join(',\n')}</textarea>
-    </div>
-
-    <script>
-        // Copy to clipboard
-        document.querySelectorAll('textarea').forEach(textarea => {
-            textarea.addEventListener('click', function() {
-                this.select();
-                document.execCommand('copy');
-                alert('Copied to clipboard!');
-            });
-        });
-    </script>
-</body>
-</html>`;
-
-            const blob = new Blob([html], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'github_upload_guide.html';
-            a.click();
-            URL.revokeObjectURL(url);
-            showNotification('Guide downloaded!', 'success');
         }
 
         // PlayStore Fetch
@@ -1030,90 +1147,78 @@
                 showNotification('Please enter a Play Store URL', 'error');
                 return;
             }
-
             const btn = document.querySelector('.fetch-btn');
-            btn.disabled = true;
-            showNotification('Fetching data...', 'loading');
-
+            if (btn) btn.disabled = true;
+            showNotification('Fetching...', 'success');
+            
             try {
-                const appIdMatch = url.match(/id=([a-zA-Z0-9._]+)/);
-                if (!appIdMatch) throw new Error('Invalid Play Store URL');
-                const appId = appIdMatch[1];
-
-                const apiUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://play.google.com/store/apps/details?id=${appId}&hl=en`)}`;
+                const match = url.match(/id=([a-zA-Z0-9._]+)/);
+                if (!match) throw new Error('Invalid URL');
+                
+                const apiUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://play.google.com/store/apps/details?id=' + match[1] + '&hl=en');
                 const response = await fetch(apiUrl);
-                if (!response.ok) throw new Error('Failed to fetch');
+                if (!response.ok) throw new Error('Failed');
                 
                 const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                
                 const titleEl = doc.querySelector('h1 span');
-                const title = titleEl ? titleEl.textContent.trim() : '';
-
                 const descEl = doc.querySelector('[itemprop="description"]');
-                const description = descEl ? descEl.textContent.replace(/<[^>]*>/g, '').trim() : '';
-                const shortDescription = description.substring(0, 150);
-
                 const iconEl = doc.querySelector('[itemprop="image"]') || doc.querySelector('.W9yFB img') || doc.querySelector('.xSyT2c img');
-                const iconUrl = iconEl ? iconEl.src || iconEl.getAttribute('content') : '';
-
                 const screenshots = [];
-                const screenEls = doc.querySelectorAll('[data-screenshot-item-index] img, .m2Cyqd img, .T75f5 img');
-                screenEls.forEach(el => {
+                doc.querySelectorAll('[data-screenshot-item-index] img, .m2Cyqd img, .T75f5 img').forEach(el => {
                     let src = el.src || el.getAttribute('data-src');
                     if (src) {
                         src = src.replace(/=w\d+-h\d+/, '=h800');
                         screenshots.push(src);
                     }
                 });
-
                 const installsEl = doc.querySelector('[itemprop="numDownloads"]');
-                const installs = installsEl ? installsEl.textContent.trim() : '';
-
-                if (title) document.getElementById('title').value = title;
-                if (shortDescription) document.getElementById('shortDescription').value = shortDescription + '...';
-                if (description) document.getElementById('description').value = description;
-                if (iconUrl) document.getElementById('thumbnail').value = iconUrl;
-                if (screenshots.length > 0) document.getElementById('images').value = screenshots.join(', ');
-                if (installs) document.getElementById('downloads').value = installs;
                 
-                const autoId = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+                if (titleEl) document.getElementById('title').value = titleEl.textContent.trim();
+                if (descEl) {
+                    const desc = descEl.textContent.replace(/<[^>]*>/g, '').trim();
+                    document.getElementById('shortDescription').value = desc.substring(0, 150) + '...';
+                    document.getElementById('description').value = desc;
+                }
+                if (iconEl) document.getElementById('thumbnail').value = iconEl.src || iconEl.getAttribute('content') || '';
+                if (screenshots.length) document.getElementById('images').value = screenshots.join('\n');
+                if (installsEl) document.getElementById('downloads').value = installsEl.textContent.trim();
+                
+                // Auto-generate project ID
+                const autoId = document.getElementById('title').value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
                 if (!document.getElementById('projectIdInput').value) {
                     document.getElementById('projectIdInput').value = autoId;
                 }
-
-                updateImagePreview();
-                showNotification(`Found: ${title}`, 'success');
-
-            } catch (error) {
-                console.error('Fetch error:', error);
-                showNotification('Could not fetch from Play Store. Try manual entry.', 'error');
+                
+                updatePreview();
+                showNotification('Data fetched: ' + document.getElementById('title').value, 'success');
+            } catch (e) {
+                console.error(e);
+                showNotification('Could not fetch. Enter manually.', 'error');
             } finally {
-                btn.disabled = false;
+                if (btn) btn.disabled = false;
             }
         }
 
-        document.getElementById('images').addEventListener('input', updateImagePreview);
-        document.getElementById('thumbnail').addEventListener('input', updateImagePreview);
+        // Image Preview
+        document.getElementById('images')?.addEventListener('input', updatePreview);
+        document.getElementById('thumbnail')?.addEventListener('input', updatePreview);
 
-        function updateImagePreview() {
-            const container = document.getElementById('imagePreview');
-            const thumbUrl = document.getElementById('thumbnail').value.trim();
-            const imageUrls = document.getElementById('images').value.split(',').map(s => s.trim()).filter(s => s);
+        function updatePreview() {
+            const thumbC = document.getElementById('thumbPreview');
+            const imgC = document.getElementById('imagePreview');
+            const thumbUrl = document.getElementById('thumbnail')?.value.trim() || '';
+            const imgUrls = (document.getElementById('images')?.value || '').split('\n').map(s => s.trim()).filter(s => s);
             
-            let html = '';
-            if (thumbUrl) {
-                html += `<div class="image-preview-item thumbnail" title="Thumbnail"><img src="${thumbUrl}" onerror="this.style.display='none'"></div>`;
-            }
-            imageUrls.forEach((url, i) => {
-                html += `<div class="image-preview-item" title="Image ${i + 1}"><img src="${url}" onerror="this.style.display='none'"></div>`;
-            });
-            container.innerHTML = html;
+            if (thumbC) thumbC.innerHTML = thumbUrl ? '<div class="image-preview-item thumbnail"><img src="' + thumbUrl + '" onerror="this.parentElement.style.display=\'none\'"></div>' : '';
+            if (imgC) imgC.innerHTML = imgUrls.map(u => '<div class="image-preview-item"><img src="' + u + '" onerror="this.parentElement.style.display=\'none\'"></div>').join('');
         }
 
         // Initialize
         loadProjects();
+
+        // Check for saved data
         const savedProjects = localStorage.getItem('portfolio_projects');
         if (savedProjects) {
             try {
@@ -1123,9 +1228,23 @@
             } catch (e) {}
         }
 
+        // Close modal on outside click
         document.getElementById('projectModal').addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-overlay')) closeModal();
+            if (e.target.classList.contains('modal-overlay')) {
+                closeModal();
+            }
         });
+
+        // Update preview on modal open
+        const originalOpenModal = openModal;
+        openModal = function(projectId) {
+            originalOpenModal(projectId);
+            uploadedImages = [];
+            selectedThumbIndex = 0;
+            renderUploadedImages();
+            updatePreview();
+        };
     </script>
+
 </body>
 </html>
